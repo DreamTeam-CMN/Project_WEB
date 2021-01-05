@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2021 at 05:40 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Dec 21, 2020 at 04:23 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -121,13 +121,6 @@ CREATE TABLE `userinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `userinfo`
---
-
-INSERT INTO `userinfo` (`iduserinfo`, `username`, `password`, `email`, `city`, `idfileinfo`) VALUES
-(1, 'manos', '123MANOS@', 'manos@matakias.com', '', 0);
-
---
 -- Indexes for dumped tables
 --
 
@@ -182,28 +175,6 @@ ALTER TABLE `timings`
 ALTER TABLE `userinfo`
   ADD PRIMARY KEY (`iduserinfo`),
   ADD KEY `idfileinfo` (`idfileinfo`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `response`
---
-ALTER TABLE `response`
-  MODIFY `idresponse` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `timings`
---
-ALTER TABLE `timings`
-  MODIFY `idtimings` int(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `userinfo`
---
-ALTER TABLE `userinfo`
-  MODIFY `iduserinfo` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
