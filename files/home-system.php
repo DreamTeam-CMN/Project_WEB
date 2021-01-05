@@ -8,10 +8,6 @@ session_start();
 $user = $_SESSION['user'];
 echo "Welcome ".$user;
 echo "<br>";
-//$user=$_POST['user'];
-//$email=$_POST['email'];
-//$pass=$_POST['pass'];
-//$conpass=$_POST['conpass'];
 ?>
 
 <!DOCTYPE html>
@@ -33,11 +29,14 @@ echo "<br>";
    </form>
    <?php include 'home.buttons-systems.php' ?>
    <script>
-	  console.log("<?=$user?>")
-	  console.log("<?=$email?>")
-	  console.log("<?=$pass?>")
-	  console.log("<?=$conpass?>")	  
-	</script>
+	const successCallback=(position) => {
+		console.log(position);
+	};
+    const errorCallback=(error) => {
+		console.error(error);
+	};
+    navigator.geolocation.getCurrentPosition(successCallback,errorCallback);	
+    </script>
   </body>
 </html>
    
