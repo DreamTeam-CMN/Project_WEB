@@ -22,10 +22,24 @@ echo "<br>";
   <a href='/upload-system.php'>Upload</a>
   <a href='/home-system.php'>Home</a>
   <h1>Choose a File to Upload</h1>
-  <form action="?" method="post" enctype="multipart/form-data">
-  <input type="file" name="file"> <br> <br>
-  <button type="submit" name="submit">Upload File</button> <br> <br>  
-    <a href="myfile" download=""><button type="button">Download File</button></a>
-    <?php include 'upload-process.php' ?>	
+  <form class="form" id="myform">
+    <input type="file" name="myfile" id="myfile"> <br><br>
+	<button type="submit">Upload File</button>
+	
+  </form>
+  <script>
+    const myform=document.getElementById("myform");
+	const myfile=document.getElementById("myfile");
+	myform.addEventListener("submit" , e => {
+		e.preventDefault();
+		const endpoint="upload.php";
+		const formData=new formData();
+		formData.append("myfile" , myfile.files[0]);
+	fetch(endpoint , {
+		method:"post",
+	body: formData})
+	)
+	</script>
+    <a href="myfile" download=""><button type=button">Download File</button></a>	
   </body>
 </html>
