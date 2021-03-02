@@ -1,3 +1,4 @@
+<!--Φόρτωση αρχείου στον server-->
 <?php
    if (isset($_POST["submit"])){
 	   $file=$_FILES['file'];
@@ -24,5 +25,6 @@
 		   }
 	   }else{
 		   echo "Only har files allowed";
+		   echo "Choose ONLY har files";
 	   }
 }

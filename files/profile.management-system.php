@@ -1,9 +1,12 @@
+<!--Διαχείριση προφιλ-->
 <?php
 
+/*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
 echo "Connected Successfully";
 echo "<br>";
 
+/*Φόρτωση του username του εκάστοτε χρήστη*/
 session_start();
 $user = $_SESSION['user'];
 echo "Welcome ".$user;
@@ -17,10 +20,14 @@ echo "<br>";
     <title>Profile Management</title>
   </head>
   <body>
+  
+  <!--Menu-->
   <a href='/logout-system.php'>Log out</a>
   <a href='/profile.management-system.php'>Profile management</a>
   <a href='/upload-system.php'>Upload</a>
   <a href='/home-system.php'>Home</a>
+  
+  <!--Αλλαγή στοιχείων-->
    <h1>Change Info</h1>
    <form action="?" method="post">
    <label>New Username</label>
@@ -36,6 +43,8 @@ echo "<br>";
 	<input type="password" name="conpass" value="<?php $conpass ?>"> <br>
 	
 	<input type="submit" name ="submit" value="Submit">
+	
+	<!--Έλεγχος ορθότητας του password-->
 	<?php include 'profile.management-system-errors.php' ?>
 	</body>
 </html>
