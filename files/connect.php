@@ -1,3 +1,4 @@
+<!--Σύνδεση της βάσης-->
 <?php
   $servername="localhost";
   $username="root";

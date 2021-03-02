@@ -1,21 +1,27 @@
+<!--Εγγραφή χρήστη-->
 <?php
 
-include_once 'connect.php';
+/*Σύνδεση με την σελίδα connect.php*/
+include_once 'connect.php'; 
 echo "Connected Successfully";
 echo "<br>";
 
 ?>
-
+ 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Sign up Page</title>
   </head>
   <body>
+  
+  <!--Menu-->
   <a href='/login-system.php'>Log in</a>
   <a href='/signup-system.php'>Sign up</a>
    <h1>Please Register</h1>
    <form action="?" method="post">
+   
+   <!--Είσοδος στοιχείων-->
 	  <label>Username</label>
 	  <input type="text" name="user" value="<?php $user ?>"> <br>
 	  <label>Email</label>
@@ -25,6 +31,8 @@ echo "<br>";
 	  <label>Confirm Password</label>
 	  <input type="password" name="conpass" value="<?php $conpass ?>"> <br>
 	  <input type="submit" name ="signup" value="Sign up">
+	  
+	  <!--Έλεγχος ορθότητας του password-->
 	  <?php include 'signup-system-errors.php' ?>
 	  <script>
 	  //var name="<?=$user?>";
