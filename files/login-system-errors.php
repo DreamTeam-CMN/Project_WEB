@@ -21,7 +21,7 @@ if (isset($_POST["login"])){
 			 $message = "You are successfully authenticated!";
 			 echo $message;
 			 $user=$_POST['user'];
-			 
+		     
 			 /*Φόρτωση του username του εκάστοτε χρήστη*/
 			 session_start();
 	         $_SESSION['user']=$user;

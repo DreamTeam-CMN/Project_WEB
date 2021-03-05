@@ -12,10 +12,8 @@
   if (isset($_POST["submit"])){
 	  $user=$_POST['user'];
 	  
-	  /*Φόρτωση του username του εκάστοτε χρήστη*/
 	  session_start();
-	  $_SESSION['user']=$user;
-	  
+  	  
 	  $oldpass=$_POST['oldpass'];
       $pass=$_POST['pass'];
       $conpass=$_POST['conpass'];
@@ -49,12 +47,10 @@
 				     if ($var5==1){
 						 
 						 
-						 $sql = "UPDATE userinfo SET username=?, password=?";
-						 $stmt= $conn->prepare($sql);
-						 $stmt->bind_param("ss", $user, $pass);
-						 $stmt->execute();
-						 
-						 /*Ανακατεύθυνση στη σελίδα upload-system.php*/
+						 $query="UPDATE userinfo SET username='{$user}', password='{$pass}' WHERE username='{$_SESSION['user']}'";
+						 $sql =mysqli_query($conn, $query);
+						 $_SESSION['user']=$user;
+						
 					       header('Location: upload-system.php');
 				        }
 			        } 
@@ -108,5 +104,5 @@ function length($var1 , $pass){
 		 echo "<br>";
 	 }
 }
-
+ 
 ?>
