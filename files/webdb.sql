@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2021 at 05:40 PM
+-- Generation Time: Mar 05, 2021 at 02:56 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -125,7 +125,12 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`iduserinfo`, `username`, `password`, `email`, `city`, `idfileinfo`) VALUES
-(1, 'manos', '123MANOS@', 'manos@matakias.com', '', 0);
+(1, 'xrysa', 'XRYSA123@', 'xrysa@tsouki.com', '', 0),
+(2, 'manos', 'MANOS123@', 'manos@matakias.com', '', 0),
+(3, 'nikol', 'NIKOL123@', 'nikol@sklav.com', '', 0),
+(4, 'rico', 'RICO123@', 'rico@thedog.com', '', 0),
+(5, 'java', 'JAVA123@', 'java@theotherdog.com', '', 0),
+(6, 'bigbrother', 'BIG123@@', 'big@brother.com', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -203,7 +208,7 @@ ALTER TABLE `timings`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `iduserinfo` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iduserinfo` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
