@@ -26,9 +26,18 @@ echo "<br>";
 	  <label>Password</label>
 	  <input type="password" name="pass" value="<?php $pass ?>"> <br>
 	<input type="submit" name ="login" value="Log in">
-	</form>
-	
 	<!--Έλεγχος ορθότητας των στοιχείων-->
 	<?php include 'login-system-errors.php' ?>
+	<br>
+	<br>
+	<br>
+	<input type="submit" name ="admin" value="Admin">
+	</form>
+	<?php
+
+    if (isset($_POST["admin"])){
+	header('Location: admin-login.php');
+}
+?>
 	</body>
 </html>	
