@@ -25,6 +25,7 @@
 		   }
 	   }else{
 		   echo "Only har files allowed";
+		   echo "<br>";
 		   echo "Choose ONLY har files";
 	   }
 }
