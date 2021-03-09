@@ -28,32 +28,54 @@ echo "<br>";
   <a href='/home-system.php'>Home</a>
   
   <h1>Choose a File to Upload</h1>
- <input type="file" id="file-selector" accept=".har">
-<script>
-  const fileSelector = document.getElementById('file-selector');
-  fileSelector.addEventListener('change', (event) => {
-    const fileList = event.target.files;
-    console.log(fileList);
-  });
-</script>
+<input type="file" onchange="readFiles(event)" accept=".har">
 <br>
 <br>
+<input type="button" value="Upload" onclick="upload(event)">
 <script>
-function dude(file) {
-  // Check if the file is an image.
-  const reader = new FileReader();
-  reader.addEventListener('load', (event) => {
-    har.src = event.target.result;
-  });
-  reader.readAsDataURL(file);
+function readFiles(event) {
+    var fileList=event.target.files;
+	for(var i=0; i < fileList.length; i++ ) {
+        loadAsText(fileList[i]);
+}
+var theFile = fileList[0];
+}
+	
+function loadAsText(theFile) {
+    var reader = new FileReader();
+	
+    reader.onload = function(loadedEvent) {
+        // result contains loaded file.
+        console.log(loadedEvent.target.result);
+    }
+    reader.readAsText(theFile);
+}
+console.stdlog = console.log.bind(console);
+console.logs = [];
+console.log = function(){
+   console.logs.push(Array.from(arguments));
+   console.stdlog.apply(console, arguments);
+   //document.write(console.logs); κραταμε το har της κονσολας
+}
+//Upload!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function upload(event) {
+    console.log("Uploading...");
+
+    const fileField = document.getElementById("fileField");
+    const formData = new FormData();
+
+    formData.append('test', 'testValue');
+    formData.append('selectedFile', fileField.files[0]);
+
+    fetch('http://localhost/upload-system.php?', {
+        method: 'PUT',
+        body: formData
+    })
+    .then((result) => {
+        console.log('Success:', result);
+    })
+    ;
 }
 </script>
-<form action="?" method="post">
-  <button type="submit" name="submit">Upload File</button> <br> <br>  
-    <a href="myfile" download=""><button type="button">Download File</button></a>
-</form>
-	
-	<!--Σύνδεση με την σελίδα upload-process.php-->
-    <?php include 'upload-process.php' ?>	
   </body>
 </html>
