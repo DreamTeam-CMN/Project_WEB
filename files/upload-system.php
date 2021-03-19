@@ -31,32 +31,111 @@ echo "<br>";
 <input type="file" onchange="readFiles(event)" accept=".har">
 <br>
 <br>
-<input type="button" value="Upload" onclick="upload(event)">
+<input id="Button" type="button" disabled="true" value="Download" onclick="save(event)">
+<br>
+<br>
+<input id="Buton" type="button" disabled="true" value="Upload" onclick="upload(event)">
 <script>
+/*Διαδικασία φόρτωσης και επεξεργασίας har αρχείου*/
+var x;
 function readFiles(event) {
     var fileList=event.target.files;
 	for(var i=0; i < fileList.length; i++ ) {
-        loadAsText(fileList[i]);
+        loadAndEdit(fileList[i]);
 }
 var theFile = fileList[0];
 }
-	
-function loadAsText(theFile) {
+/*Φόρτωση har αρχείου*/	
+function loadAndEdit(theFile) {
     var reader = new FileReader();
 	
     reader.onload = function(loadedEvent) {
-        // result contains loaded file.
         console.log(loadedEvent.target.result);
+		var harjson=JSON.parse(loadedEvent.target.result);//μετατροπή περιεχομένου αρχείου σε object
+		
+		let newhar=JSON.parse(JSON.stringify(harjson));//αντίγραφο object προς επεξεργασία
+		/*επεξεργασία αντιγράφου*/
+		for (var k in newhar.log) {
+            if (k !== 'entries') {
+               delete newhar.log[k];
+			}else{
+				for (var l in newhar.log.entries){
+					for (var m in newhar.log.entries[l]){
+					    if (m !== 'startedDateTime' && m !== 'serverIPAddress' && m !== 'timings' && m !== 'request' && m !== 'response'){
+						  delete newhar.log.entries[l][m];
+					    }
+					}
+				}
+			}
+		}
+		for (var k in newhar.log.entries){
+			for (var l in newhar.log.entries[k].timings){
+				if (l !== 'wait'){
+					delete newhar.log.entries[k].timings[l];
+				}
+			}
+			for (var m in newhar.log.entries[k].request){
+				if (m !== 'method' && m !== 'url' && m !== 'headers'){
+					delete newhar.log.entries[k].request[m];
+				}else if (m == 'headers'){
+					for (var t in newhar.log.entries[k].request.headers){
+					   for (var q in newhar.log.entries[k].request.headers[t]){
+						    if (q === 'name'){
+								if ((newhar.log.entries[k].request.headers[t][q] !== 'Cache-Control' && newhar.log.entries[k].request.headers[t][q] !== 'cache-control') && 
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Content-Type' && newhar.log.entries[k].request.headers[t][q] !== 'content-type') &&
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Pragma' && newhar.log.entries[k].request.headers[t][q] !== 'pragma') &&
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Expires' && newhar.log.entries[k].request.headers[t][q] !== 'expires') &&
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Age' && newhar.log.entries[k].request.headers[t][q] !== 'age') && 
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Last-Modified' && newhar.log.entries[k].request.headers[t][q] !== 'last-modified') && 
+								   (newhar.log.entries[k].request.headers[t][q] !== 'Host' && newhar.log.entries[k].request.headers[t][q] !== 'host')){
+									 delete newhar.log.entries[k].request.headers[t];
+								}
+							}  				
+						}
+					}
+				}
+			}
+			for (var m in newhar.log.entries[k].response){
+				if (m !== 'status' && m !== 'statusText' && m !== 'headers'){
+					delete newhar.log.entries[k].response[m];
+				}else if (m == 'headers'){
+					for (var t in newhar.log.entries[k].response.headers){
+					   for (var q in newhar.log.entries[k].response.headers[t]){
+						    if (q === 'name'){
+								if ((newhar.log.entries[k].response.headers[t][q] !== 'Cache-Control' && newhar.log.entries[k].response.headers[t][q] !== 'cache-control') && 
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Content-Type' && newhar.log.entries[k].response.headers[t][q] !== 'content-type') &&
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Pragma' && newhar.log.entries[k].response.headers[t][q] !== 'pragma') &&
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Expires' && newhar.log.entries[k].response.headers[t][q] !== 'expires') &&
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Age' && newhar.log.entries[k].response.headers[t][q] !== 'age') && 
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Last-Modified' && newhar.log.entries[k].response.headers[t][q] !== 'last-modified') && 
+								   (newhar.log.entries[k].response.headers[t][q] !== 'Host' && newhar.log.entries[k].response.headers[t][q] !== 'host')){
+									 delete newhar.log.entries[k].response.headers[t];
+								}
+							} 				
+						}
+					}
+				}
+			}
+		}
+		console.log(newhar);
+		/*Συνάρτηση download*/
+		document.getElementById('Button').onclick=function() {
+           const a = document.createElement("a");
+           a.href = URL.createObjectURL(new Blob([JSON.stringify(newhar, null, 2)], {
+          type: "text/plain"
+        }));
+        a.setAttribute("download", "data.json");
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+};//τέλος download
     }
     reader.readAsText(theFile);
+	document.getElementById("Button").disabled=false;
+	document.getElementById("Buton").disabled=false;
+	
 }
-console.stdlog = console.log.bind(console);
-console.logs = [];
-console.log = function(){
-   console.logs.push(Array.from(arguments));
-   console.stdlog.apply(console, arguments);
-   //document.write(console.logs); κραταμε το har της κονσολας
-}
+
 //Upload!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function upload(event) {
     console.log("Uploading...");
