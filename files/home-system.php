@@ -35,17 +35,6 @@ echo "<br>";
    <!--Σύνδεση με την σελίδα home.buttons-systems.php-->
    <?php include 'home.buttons-systems.php' ?>
    
-   <!--Άδεια από το χρήστη για χρήση τοποθεσίας-->
-   <script>
-	const successCallback=(position) => {
-		console.log(position);
-	};
-    const errorCallback=(error) => {
-		console.error(error);
-	};
-    navigator.geolocation.getCurrentPosition(successCallback,errorCallback);	
-    </script>
-	
   </body>
 </html>
    

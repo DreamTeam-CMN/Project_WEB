@@ -118,6 +118,7 @@ function loadAndEdit(theFile) {
 			}
 		}
 		console.log(newhar);
+		
 		/*Συνάρτηση download*/
 		document.getElementById('Button').onclick=function() {
            const a = document.createElement("a");
@@ -129,32 +130,30 @@ function loadAndEdit(theFile) {
         a.click();
         document.body.removeChild(a);
 };//τέλος download
+       document.getElementById('Buton').onclick=function() {
+		   $.getJSON('https://ipapi.co/json/', function(data) {
+           console.log(JSON.stringify(data, null, 2));
+           });
+		   x=JSON.stringify(newhar);
+		   console.log(x);
+	   }
     }
     reader.readAsText(theFile);
 	document.getElementById("Button").disabled=false;
 	document.getElementById("Buton").disabled=false;
-	
 }
 
 //Upload!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-function upload(event) {
-    console.log("Uploading...");
 
-    const fileField = document.getElementById("fileField");
-    const formData = new FormData();
-
-    formData.append('test', 'testValue');
-    formData.append('selectedFile', fileField.files[0]);
-
-    fetch('http://localhost/upload-system.php?', {
-        method: 'PUT',
-        body: formData
-    })
-    .then((result) => {
-        console.log('Success:', result);
-    })
-    ;
-}
+//function upload(event) {
+	//$.getJSON('https://ipapi.co/json/', function(data) {
+  //console.log(JSON.stringify(data, null, 2));
+//});
+	
+//}
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   </body>
 </html>
