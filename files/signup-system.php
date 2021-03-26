@@ -34,13 +34,7 @@ echo "<br>";
 	  
 	  <!--Έλεγχος ορθότητας του password-->
 	  <?php include 'signup-system-errors.php' ?>
-	  <script>
-	  //var name="<?=$user?>";
-	  //var mail="<?=$email?>";
-	  //var password="<?=$pass?>";
-	  //var confirm="<?=$conpass?>";
-	  //console.log(name + mail + password + confirm);	  
-	  </script>
+	 
 	</form>
 	</body>
 </html>	

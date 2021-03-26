@@ -35,6 +35,10 @@ echo "<br>";
       <br>
       <br>
       <input id="up" type="button" disabled="true" value="Upload" onclick="upload(event)">
+	  <br>
+	  <br>
+      <div id="myDiv1"></div>
+	  <p id="myDiv2"></p>
       <script>
       /*Διαδικασία φόρτωσης και επεξεργασίας har αρχείου*/
       var EditedFile;
@@ -80,6 +84,8 @@ echo "<br>";
 			        for (var m in newhar.log.entries[k].request){
 				        if (m !== 'method' && m !== 'url' && m !== 'headers'){
 					        delete newhar.log.entries[k].request[m];
+						}else if (m == 'url'){
+							newhar.log.entries[k].request[m] = newhar.log.entries[k].request[m].replace('http://','').replace('https://','').replace('www.','').split(/[/?#]/)[0];
 				        }else if (m == 'headers'){
 					        for (var t in newhar.log.entries[k].request.headers){
 					            for (var q in newhar.log.entries[k].request.headers[t]){
@@ -133,15 +139,35 @@ echo "<br>";
                     a.click();
                    document.body.removeChild(a);
                 };//τέλος download
-		
+		       var ipdata1;
                 /*Συνάρτηση upload*/
 		        document.getElementById('up').onclick=function() {
 		            $.getJSON('https://ipapi.co/json/', function(data) {
-                        console.log(JSON.stringify(data, null, 2));
-                    });
-		            EditedFile=JSON.stringify(newhar);
-		            console.log(EditedFile);
-	            }
+                        var ipdata = JSON.stringify(data, null, 2);
+						console.log(ipdata);
+						ipdata1=JSON.parse(ipdata);
+						var ucity=ipdata1.city;
+						var	geo=ipdata1.latitude;
+						var	geo2=ipdata1.longitude;
+						var	org=ipdata1.org;
+						var	uip=ipdata1.ip;
+						var serverip=newhar.log.entries[0].serverIPAddress;
+						$.ajax({
+							url: 'db-upload-system.php',
+							type: 'GET',
+							data: { ucity : ucity , geo : geo , geo2 : geo2 , org : org , uip : uip , serverip : serverip},
+							success: function(data) {
+								$('#myDiv2').html(data);
+								//alert('yay!');
+							},
+							error: function(XMLHttpRequest, textStatus, errorThrown) {
+								//alert('klips-klops!');
+							}
+						});
+					});
+					var EditedFile=JSON.stringify(newhar);
+					$("#myDiv1").load('db-upload-system.php', {newef : EditedFile});
+		        }
             }
             reader.readAsText(theFile);
 	        document.getElementById("down").disabled=false;

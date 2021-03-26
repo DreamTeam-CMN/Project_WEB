@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2021 at 04:40 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Mar 26, 2021 at 06:06 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,12 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `harfiles` (
   `idharfiles` int(15) NOT NULL,
-  `hartext` text NOT NULL,
+  `hartext` longtext NOT NULL,
   `city` varchar(300) NOT NULL,
   `date` date NOT NULL,
   `ipaddress` varchar(300) NOT NULL,
   `provider` varchar(300) NOT NULL,
-  `iduserinfo` int(15) NOT NULL
+  `iduserinfo` int(15) NOT NULL,
+  `latitude` varchar(50) NOT NULL,
+  `longitude` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -87,7 +89,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `harfiles`
 --
 ALTER TABLE `harfiles`
-  MODIFY `idharfiles` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `idharfiles` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `userinfo`
