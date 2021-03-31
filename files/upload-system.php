@@ -37,8 +37,8 @@ echo "<br>";
       <input id="up" type="button" disabled="true" value="Upload" onclick="upload(event)">
 	  <br>
 	  <br>
-      <div id="myDiv1"></div>
-	  <p id="myDiv2"></p>
+	  <div id="myDiv1"></div>
+	  <div id="myDiv"></div>
       <script>
       /*Διαδικασία φόρτωσης και επεξεργασίας har αρχείου*/
       var EditedFile;
@@ -137,37 +137,39 @@ echo "<br>";
                     a.setAttribute("download", "data.json");
                     document.body.appendChild(a);
                     a.click();
-                   document.body.removeChild(a);
+                    document.body.removeChild(a);
                 };//τέλος download
-		       var ipdata1;
-                /*Συνάρτηση upload*/
+		       
+                /*Συνάρτηση μεταφοράς δεδομένων προς upload*/
 		        document.getElementById('up').onclick=function() {
-		            $.getJSON('https://ipapi.co/json/', function(data) {
+					$.getJSON('https://ipapi.co/json/', function(data) {
                         var ipdata = JSON.stringify(data, null, 2);
-						console.log(ipdata);
-						ipdata1=JSON.parse(ipdata);
+						var ipdata1=JSON.parse(ipdata);
 						var ucity=ipdata1.city;
 						var	geo=ipdata1.latitude;
 						var	geo2=ipdata1.longitude;
 						var	org=ipdata1.org;
 						var	uip=ipdata1.ip;
-						var serverip=newhar.log.entries[0].serverIPAddress;
+						var urL=newhar.log.entries[0].request.url;
+						console.log(urL);
+						var serverip=newhar.log.entries[0].serverIPAddress; //η ip του server
+						/*Μεταφορά των τιμών των προσωπικών στοιχείων του χρήστη*/
 						$.ajax({
 							url: 'db-upload-system.php',
-							type: 'GET',
-							data: { ucity : ucity , geo : geo , geo2 : geo2 , org : org , uip : uip , serverip : serverip},
+							type: 'POST',
+							data: { ucity : ucity , geo : geo , geo2 : geo2 , org : org , uip : uip , serverip : serverip , urL : urL},
 							success: function(data) {
-								$('#myDiv2').html(data);
-								//alert('yay!');
+								$('#myDiv').html(data);								
 							},
 							error: function(XMLHttpRequest, textStatus, errorThrown) {
-								//alert('klips-klops!');
+								alert('failed to upload');
 							}
 						});
 					});
+					/*Μεταφορά του αρχείου μετά από μετατροπή σε string*/
 					var EditedFile=JSON.stringify(newhar);
-					$("#myDiv1").load('db-upload-system.php', {newef : EditedFile});
-		        }
+					$("#myDiv1").load('dbfile-upload-system.php', {EditedFile : EditedFile});
+		        }//τέλος συνάρτησης μεταφοράς
             }
             reader.readAsText(theFile);
 	        document.getElementById("down").disabled=false;
