@@ -102,8 +102,10 @@ echo "<br>";
 							        }  				
 						        }
 					        }
+							newhar.log.entries[k].request.headers = $.grep(newhar.log.entries[k].request.headers,function(n){ return n == 0 || n });
 				        }
 			        }
+					
 			        for (var m in newhar.log.entries[k].response){
 				        if (m !== 'status' && m !== 'statusText' && m !== 'headers'){
 					        delete newhar.log.entries[k].response[m];
@@ -123,11 +125,12 @@ echo "<br>";
 							        } 				
 						        }
 					        }
+							newhar.log.entries[k].response.headers = $.grep(newhar.log.entries[k].response.headers,function(n){ return n == 0 || n });
 				        }
 			        }
 		        }
 		        console.log(newhar);
-		
+		        
 		        /*Συνάρτηση download*/
 		        document.getElementById('down').onclick=function() {
                     const a = document.createElement("a");
@@ -167,9 +170,13 @@ echo "<br>";
 						});
 					});
 					/*Μεταφορά του αρχείου μετά από μετατροπή σε string*/
-					var EditedFile=JSON.stringify(newhar);
-					$("#myDiv1").load('dbfile-upload-system.php', {EditedFile : EditedFile});
-		        }//τέλος συνάρτησης μεταφοράς
+					var delayInMilliseconds = 5000; //5 seconds
+
+					setTimeout(function() {
+						var EditedFile=JSON.stringify(newhar);
+						$("#myDiv1").load('dbfile-upload-system.php', {EditedFile : EditedFile});
+					}, delayInMilliseconds);
+				}//τέλος συνάρτησης μεταφοράς
             }
             reader.readAsText(theFile);
 	        document.getElementById("down").disabled=false;

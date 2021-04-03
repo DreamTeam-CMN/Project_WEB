@@ -39,6 +39,7 @@ if(isset($_POST["ucity"]) && isset($_POST["geo"]) && isset($_POST["geo2"]) && is
 	$stmt->execute();
 	
 	
+	
 ?>
 
 <!DOCTYPE html>
