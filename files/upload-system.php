@@ -175,6 +175,7 @@ echo "<br>";
 					setTimeout(function() {
 						var EditedFile=JSON.stringify(newhar);
 						$("#myDiv1").load('dbfile-upload-system.php', {EditedFile : EditedFile});
+						alert("to upload teleiwse vlaka");
 					}, delayInMilliseconds);
 				}//τέλος συνάρτησης μεταφοράς
             }

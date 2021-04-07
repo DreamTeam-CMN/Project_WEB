@@ -46,17 +46,17 @@
 			    if ($var4==1){
 				     if ($var5==1){
 						 
-						 
-						 $query="UPDATE userinfo SET username='{$user}', password='{$pass}' WHERE username='{$_SESSION['user']}'";
-						 $sql =mysqli_query($conn, $query);
-						 $_SESSION['user']=$user;
+					   $query="UPDATE userinfo SET username='{$user}', password='{$pass}' WHERE username='{$_SESSION['user']}'";
+					   $sql =mysqli_query($conn, $query);
+					   $_SESSION['user']=$user;
 						
-					       header('Location: upload-system.php');
-				        }
-			        } 
-		        }
-	        }
-        }
+					   header('Location: home-system.php');
+				    }
+			    } 
+		    }
+	    }
+    }
+
 		
 /*Συναρτήσεις*/
 function length($var1 , $pass){
