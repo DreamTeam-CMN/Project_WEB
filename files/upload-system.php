@@ -170,12 +170,12 @@ echo "<br>";
 						});
 					});
 					/*Μεταφορά του αρχείου μετά από μετατροπή σε string*/
-					var delayInMilliseconds = 5000; //5 seconds
+					var delayInMilliseconds = 3000; //3 seconds
 
 					setTimeout(function() {
 						var EditedFile=JSON.stringify(newhar);
 						$("#myDiv1").load('dbfile-upload-system.php', {EditedFile : EditedFile});
-						alert("to upload teleiwse vlaka");
+						alert("Upload is done!");
 					}, delayInMilliseconds);
 				}//τέλος συνάρτησης μεταφοράς
             }
