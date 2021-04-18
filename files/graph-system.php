@@ -18,7 +18,8 @@ echo "<br>";
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <canvas id="chartContainer" width="1200" height="400"></canvas>
-
+   <button  id="Prov">Providers</button>
+   <button  id="Meth">Request Methods</button>
  <script>
 var info=new Array();
 var result=new Array();
@@ -28,13 +29,18 @@ var prov=new Array();
 var reqm=new Array();	
 var cont=new Array();
 var timi=new Array();
-		
+var avg=new Array();
+var avgote=new Array();
+var avgfor=new Array();
+var avgwin=new Array();
+
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", "request.php");
 		xhr.send();
 		xhr.onload = function(){
 			result = this.response;//file from php
 		var edit=result.split("]");
+		console.log(edit.length);
 			analysis(edit);
 	    };
 	
@@ -45,6 +51,8 @@ function analysis (edit) {
 		info[i]=info[i].split(",");
 		date[i]=info[i][1].slice(1,11);//the date from startedDateTime
 		time[i]=info[i][1].slice(12,20);//the time from startedDateTime
+		time[i]=time[i].slice(0,2);
+		time[i]=time[i]*1;
 		timi[i]=info[i][0].slice(1,-1);//the timingswait 
 		timi[i]*=1;//string to number
 		prov[i]=info[i][2];//provider
@@ -58,6 +66,7 @@ function analysis (edit) {
          		var temp1 = time[j];
 				time[j] = time[j + 1];
 				time[j+1] = temp1;
+				//console.log(typeof time);
 				var temp2 = date[j];
 				date[j] = date[j + 1];
 				date[j+1] = temp2;
@@ -76,25 +85,149 @@ function analysis (edit) {
 			}
 		}
 	}
-	
+	for (var i=0;i<24;i++){
+		counter=0;
+		avg[i]=0;
+		for(var j=0;j<time.length-1;j++){
+			if (time[j]>=i && time[j]<i+1){
+				avg[i]=avg[i]+timi[j];
+				counter++;
+			}
+		}
+		avg[i]=avg[i]/counter;
+		//console.log(avg[i]);
+		
+	}
+	for (var i=0;i<24;i++){
+		var counter=0;
+		var counter1=0;
+		var counter2=0;
+		avgote[i]=0;
+		avgfor[i]=0;
+		avgwin[i]=0;
+		for(var j=0;j<prov.length-1;j++){
+			if (time[j]>=i && time[j]<i+1 && prov[j]==prov[3]){
+				avgote[i]=avgote[i]+timi[j];
+				counter++;
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[55]){
+				avgfor[i]=avgfor[i]+timi[j];
+				counter1++;
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
+				avgwin[i]=avgwin[i]+timi[j];
+				counter2++;
+			}
+		}
+		avgote[i]=avgote[i]/counter;
+		avgfor[i]=avgfor[i]/counter1;
+		avgwin[i]=avgwin[i]/counter2;
+	}
+	for(var i=0;i<24;i++){
+	    if(isNaN(avg[i])){
+			avg[i]=0;
+	    }
+	    if(isNaN(avgote[i])){
+			avgote[i]=0;
+	    }
+		if(isNaN(avgfor[i])){
+			avgfor[i]=0;
+	    }
+		if(isNaN(avgwin[i])){
+			avgwin[i]=0;	
+	    }
+	}
+	//console.log(edit.length);
+	/*for(var i=0;i<2500;i++){
+			
+		console.log(reqm[i]);
+		console.log(i);
+		
+	}*/
+	for (var i=0;i<24;i++){
+		var counter=0;
+		var counter1=0;
+		var counter2=0;
+		avgget[i]=0;
+		avgpost[i]=0;
+		avgopt[i]=0;
+		for(var j=0;j<reqm.length-1;j++){
+			if (time[j]>=i && time[j]<i+1 && reqm[j]==prov[1){
+				avgote[i]=avgote[i]+timi[j];
+				counter++;
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[55]){
+				avgfor[i]=avgfor[i]+timi[j];
+				counter1++;
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
+				avgwin[i]=avgwin[i]+timi[j];
+				counter2++;
+			}
+		}
+		console.log(avgget[i]);
+	}
+	//console.log(timi);
 	var ctx=document.getElementById('chartContainer');
-    var chart = new Chart(ctx, {
+    window.chart = new Chart(ctx, {
 	type: 'line',
 	data: {        
-		labels: time,
+		labels: ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],
 		datasets: [{
 			label: 'Response timings analysis',
-			data: timi,
+			data: avg,
 			backgroundColor: "rgba(255, 99, 132, 0.2)",
 			borderColor: "rgba(255, 99, 132, 1)",
-			borderWidth: 1,
+			borderWidth: 3,
 			fill: false,
 			lineTension: 0
 		}]
 	}
 });
+var button=document.getElementById("Prov");
+button.onclick = function (){
+	a(window.chart);
+	var ctx=document.getElementById('chartContainer');
+    window.chart = new Chart(ctx, {
+	type: 'line',
+	data: {        
+		labels: ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"],
+		datasets: [{
+			label: 'COSMOTE',
+			data: avgote,
+			backgroundColor: "rgba(255, 99, 132, 1)",
+			borderColor: "rgba(255, 99, 132, 1)",
+			borderWidth: 3,
+			fill: false,
+			lineTension: 0
+		},
+		{
+			label: 'FORTHNET',
+			data: avgfor,
+			backgroundColor: "#8e5ea2",
+			borderColor: "#8e5ea2",
+			borderWidth: 3,
+			fill: false,
+			lineTension: 0
+		},
+		{
+			label: 'WIND',
+			data: avgwin,
+			backgroundColor: "#3e95cd",
+			borderColor: "#3e95cd",
+			borderWidth: 3,
+			fill: false,
+			lineTension: 0	
+		}
+		]
+	}
+});
+};
+var button=document.getElementById("Meth");
+button.onclick = function (){
+	a(window.chart);
+};
 }
- 
+
+ function a(chart){
+	 chart.destroy();
+ }
  
 
   
