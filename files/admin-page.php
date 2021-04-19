@@ -90,7 +90,7 @@ echo "<br>";
   
   echo "<table border='1'>
 	<tr>
-	<th>Code number</th>
+	<th>Response Status</th>
 	<th>Total</th>
 	</tr>";
   $plres=mysqli_query($conn,"SELECT COUNT(*) responseStatus  FROM entries GROUP BY responseStatus");
