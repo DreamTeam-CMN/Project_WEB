@@ -11,17 +11,20 @@ $servername="localhost";
 	
 $waitTable=array();
 $counter=0;
-$array=mysqli_query($conn,"SELECT entries.timingsWait, entries.startedDateTIme, harfiles.provider, entries.requestMethod, hrequest.contentType FROM entries INNER JOIN harfiles ON entries.idharfiles=harfiles.idharfiles INNER JOIN hrequest ");
+$array=mysqli_query($conn,"SELECT entries.timingsWait, entries.startedDateTIme, harfiles.provider, entries.requestMethod, hrequest.contentType 
+FROM entries INNER JOIN harfiles ON entries.idharfiles=harfiles.idharfiles LEFT JOIN hrequest ON entries.identries=hrequest.identries");
 while ($row1=mysqli_fetch_array($array)){
 	$waitTable[0]=$row1['timingsWait'];
 	$waitTable[1]=$row1['startedDateTIme'];
 	$waitTable[2]=$row1['provider'];
 	$waitTable[3]=$row1['requestMethod'];
 	$waitTable[4]=$row1['contentType'];
-	//echo json_encode($waitTable);
+	echo json_encode($waitTable);
 	$counter++;
+	
+	
 }
-echo $counter;
+
 
 
 

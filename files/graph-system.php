@@ -33,15 +33,18 @@ var avg=new Array();
 var avgote=new Array();
 var avgfor=new Array();
 var avgwin=new Array();
+var avgget=new Array();
+var avgopt=new Array();
+var avgpost=new Array();
 
 		var xhr = new XMLHttpRequest();
 		xhr.open("POST", "request.php");
 		xhr.send();
 		xhr.onload = function(){
-			result = this.response;//file from php
+		result = this.response;//file from php
 		var edit=result.split("]");
-		console.log(edit.length);
 			analysis(edit);
+			//console.log(this.response);
 	    };
 	
 function analysis (edit) {
@@ -58,6 +61,7 @@ function analysis (edit) {
 		prov[i]=info[i][2];//provider
 		reqm[i]=info[i][3];//requestmethod
 		cont[i]=info[i][4];//request content-type
+		
 	}
 	
 	for (var i=0;i<time.length;i++){
@@ -106,13 +110,13 @@ function analysis (edit) {
 		avgfor[i]=0;
 		avgwin[i]=0;
 		for(var j=0;j<prov.length-1;j++){
-			if (time[j]>=i && time[j]<i+1 && prov[j]==prov[3]){
+			if (time[j]>=i && time[j]<i+1 && prov[j]==prov[1]){
 				avgote[i]=avgote[i]+timi[j];
 				counter++;
-			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[55]){
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
 				avgfor[i]=avgfor[i]+timi[j];
 				counter1++;
-			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
+			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[755]){
 				avgwin[i]=avgwin[i]+timi[j];
 				counter2++;
 			}
@@ -135,12 +139,12 @@ function analysis (edit) {
 			avgwin[i]=0;	
 	    }
 	}
-	//console.log(edit.length);
+	
 	/*for(var i=0;i<2500;i++){
-			
+		if (reqm[i]!= reqm[1]){	
 		console.log(reqm[i]);
 		console.log(i);
-		
+		}
 	}*/
 	for (var i=0;i<24;i++){
 		var counter=0;
@@ -150,19 +154,36 @@ function analysis (edit) {
 		avgpost[i]=0;
 		avgopt[i]=0;
 		for(var j=0;j<reqm.length-1;j++){
-			if (time[j]>=i && time[j]<i+1 && reqm[j]==prov[1){
-				avgote[i]=avgote[i]+timi[j];
+			if (time[j]>=i && time[j]<i+1 && reqm[j]==reqm[1]){
+				avgget[i]=avgget[i]+timi[j];
 				counter++;
-			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[55]){
-				avgfor[i]=avgfor[i]+timi[j];
-				counter1++;
-			}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
-				avgwin[i]=avgwin[i]+timi[j];
+			}else if(time[j]>=i && time[j]<i+1 && reqm[j]==reqm[200]){
+				avgpost[i]=avgpost[i]+timi[j];
+				counter1++;	
+			}else if(time[j]>=i && time[j]<i+1 && reqm[j]==reqm[1231]){
+				avgopt[i]=avgopt[i]+timi[j];
 				counter2++;
 			}
 		}
-		console.log(avgget[i]);
+		avgget[i]=avgget[i]/counter;
+		avgpost[i]=avgpost[i]/counter1;
+		avgopt[i]=avgopt[i]/counter2;
 	}
+	
+	for(var i=0;i<24;i++){
+	    if(isNaN(avgget[i])){
+			avgget[i]=0;
+	    }
+	    if(isNaN(avgpost[i])){
+			avgpost[i]=0;
+	    }
+		if(isNaN(avgopt[i])){
+			avgopt[i]=0;
+	    }
+	}
+	
+	
+	
 	//console.log(timi);
 	var ctx=document.getElementById('chartContainer');
     window.chart = new Chart(ctx, {
