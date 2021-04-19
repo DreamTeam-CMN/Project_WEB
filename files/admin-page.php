@@ -17,12 +17,19 @@ echo "<br>";
   <br>
   <br>
   <form action="?" method="post">
-  <input type="submit" name ="graphs" value="Press for other charts">
+  <input type="submit" name ="grapht" value="Timings charts">
+  <br>
+  <br>
+  <input type="submit" name ="graphhe" value="Headers charts">
   </form>
   <?php
   
-  if (isset($_POST["graphs"])){
-	header('Location: graph-system.php');
+  if (isset($_POST["grapht"])){
+	header('Location: graph.timings-system.php');
+  }
+  
+  if (isset($_POST["graphhe"])){
+	header('Location: graph.headers-system.php');
   }
   
   $result=mysqli_query($conn,"SELECT * FROM userinfo"); 
