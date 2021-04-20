@@ -115,15 +115,15 @@ echo "<br>";
   <th>Content Type</th>
   <th>Average Age</th>
   </tr>";
-  $avgage=mysqli_query($conn,"SELECT AVG(age) FROM hresponse GROUP BY contentType");
-  $avgname=mysqli_query($conn,"SELECT contentType FROM hresponse GROUP BY contentType");
+  $avgage=mysqli_query($conn,"SELECT AVG(ageres) FROM hresponse GROUP BY contentTyperes");
+  $avgname=mysqli_query($conn,"SELECT contentTyperes FROM hresponse GROUP BY contentTyperes");
 	while ($row1=mysqli_fetch_array($avgname)){
-		$name2=$row1['contentType'];
+		$name2=$row1['contentTyperes'];
 		echo "
         <tr>
         <td>".$name2."</td>";
 		while ($row2=mysqli_fetch_array($avgage)){ 
-			$number2=$row2['AVG(age)'];
+			$number2=$row2['AVG(ageres)'];
 			echo "
 	        <td>".$number2."</td>
 	        </tr>";
@@ -133,8 +133,5 @@ echo "<br>";
 	echo "<br>";
 	
   ?>
-  
-  
-
  </body>
 </html>

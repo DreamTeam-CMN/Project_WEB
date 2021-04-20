@@ -61,6 +61,7 @@ echo "<br>";
 	var avgfon=new Array();
 	var avgnul=new Array();
 	const nod=new Array();
+	const prova=new Array();
 	
 	/*Συλλογή δεδομένων*/
 	var xhr = new XMLHttpRequest();
@@ -111,6 +112,20 @@ echo "<br>";
 			}
 			if (!exists){
 				nod.push(cont[i]);
+			}
+		}
+		
+		/*Διαδικασία αφαίρεσης διπλότυπων από τους providers*/
+		for (var i=0;i<prov.length;i++){
+			let exists=false;
+			for (var j=0;j<prova.length;j++){
+				if (prov[i]===prova[j]){
+					exists=true;
+					break;
+				}
+			}
+			if (!exists){
+				prova.push(prov[i]);
 			}
 		}
 		
@@ -278,13 +293,13 @@ echo "<br>";
 			avgfor[i]=0;
 			avgwin[i]=0;
 			for(var j=0;j<prov.length-1;j++){
-				if (time[j]>=i && time[j]<i+1 && prov[j]==prov[1]){
+				if (time[j]>=i && time[j]<i+1 && prov[j]==prova[2]){
 					avgote[i]=avgote[i]+timi[j];
 					counter++;
-				}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[354]){
+				}else if(time[j]>=i && time[j]<i+1 && prov[j]==prova[0]){
 					avgfor[i]=avgfor[i]+timi[j];
 					counter1++;
-				}else if(time[j]>=i && time[j]<i+1 && prov[j]==prov[755]){
+				}else if(time[j]>=i && time[j]<i+1 && prov[j]==prova[1]){
 					avgwin[i]=avgwin[i]+timi[j];
 					counter2++;
 				}

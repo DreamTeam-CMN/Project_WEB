@@ -50,7 +50,7 @@ if (is_null($counter)){
 
 $sqlentriesQuery = "INSERT INTO entries (startedDateTime, serverIPAddress, timingsWait, idharfiles, requestMethod, requestURL, responseStatus, responseStatusText) VALUES";
 $sqlhrequestQuery = "INSERT INTO hrequest (contentType, cacheControl , pragma , expires , age , lastModified, host , identries) VALUES";
-$sqlhresponseQuery = "INSERT INTO hresponse (contentType, cacheControl , pragma , expires , age , lastModified, host , identries) VALUES";
+$sqlhresponseQuery = "INSERT INTO hresponse (contentTyperes, cacheControlres , pragmares , expiresres , ageres , lastModifiedres , hostres , identries) VALUES";
 
 foreach ($json_data->log->entries as $v){
 	
