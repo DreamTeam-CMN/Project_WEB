@@ -19,6 +19,8 @@ echo "<br>";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <canvas id="chartContainer" width="1200" height="400"></canvas>
   <script>
+  
+ /*Αρχικοποίηση των πινάκων που θα χρησιμοποιηθούν για την αποθήκευση των στοιχείων απο τη βάση*/
   var info=new Array();
   var contres=new Array();
   var cachres=new Array();
@@ -36,7 +38,7 @@ echo "<br>";
   var diff=new Array();
   var maxage=new Array();
   
-  
+  /*Αρχικοποίηση όλων των counters ου θα χρησιμοποιήσουμε και αρχικοποίηση των πινάκων χωρίς διπλότυπα*/
   const nod=new Array();
   const nod1=new Array();
   const prova=new Array();
@@ -187,6 +189,7 @@ echo "<br>";
 			    }
 			}
 		}
+		/*Αρχικοποίηση πινάκων για το Bar Chart: TTL Analysis*/
 		var texthtml=0;
 		var textcss=0;
 		var textplain=0;
@@ -228,7 +231,7 @@ echo "<br>";
         var appjsonwin=0;
         var appjsonfor=0;
 		for (var i=0;i<cachres.length-1;i++){
-			//text html
+			//Ομάδα text-html όλων και κάθε παρόχου ξεχωριστά
 			if(contres[i]===nod[0] || contres[i]===nod[2] || contres[i]===nod[20] || contres[i]===nod[35] || contres[i]===nod[48] || contres[i]===nod[49] || contres[i]===nod[54] || contres[i]===nod[56]){
 				if(found[i]){
 					texthtml=texthtml+maxage[i];
@@ -263,7 +266,7 @@ echo "<br>";
 					}
 				}
 			
-			//text css	
+			//Ομάδα text-css  όλων και κάθε παρόχου ξεχωριστά
 			}else if(contres[i]==nod[1] || contres[i]==nod[25] || contres[i]==nod[30] || contres[i]==nod[43]){
 				if(found[i]){
 					textcss=textcss+maxage[i];
@@ -297,7 +300,7 @@ echo "<br>";
 						count5++;
                     }
 				}
-			//text plain	
+			//Ομάδα text-plain  όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[19] || contres[i]==nod[26] || contres[i]==nod[40] || contres[i]==nod[42] || contres[i]==nod[46]){
 				if(found[i]){
 					textplain=textplain+maxage[i];
@@ -331,7 +334,7 @@ echo "<br>";
 						count8++;
                     }
 				}
-			//text javascript	
+			//Ομάδα text-javascript  όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[8] || contres[i]==nod[9] || contres[i]==nod[18] || contres[i]==nod[33] || contres[i]==nod[52] || contres[i]==nod[57]){
 				if(found[i]){
 					textjs=textjs+maxage[i];
@@ -365,7 +368,7 @@ echo "<br>";
 						count11++;
                     }
 				}
-			//font	
+			//Ομάδα font  όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[16] || contres[i]==nod[27] || contres[i]==nod[41]){
 				if(found[i]){
 					font=font+maxage[i];
@@ -399,7 +402,7 @@ echo "<br>";
 						count14++;
                     }
 				}
-			//app javascript	
+			//Ομάδα app-javascript όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[4] || contres[i]==nod[7] || contres[i]==nod[11] || contres[i]==nod[29] || contres[i]==nod[31] || contres[i]==nod[32] || contres[i]==nod[34] || contres[i]==nod[53]){
 				if(found[i]){
 					appjs=appjs+maxage[i];
@@ -433,7 +436,7 @@ echo "<br>";
 						coun1++;
                     }
 				}
-			//app json	
+			//Ομάδα app-json όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[10] || contres[i]==nod[12] || contres[i]==nod[39]){
 				if(found[i]){
 					appjson=appjson+maxage[i];
@@ -467,7 +470,7 @@ echo "<br>";
 						coun4++;
 					}
 				}
-			//image	
+			//Ομάδα image όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[3] || contres[i]==nod[5] || contres[i]==nod[14] || contres[i]==nod[15] || contres[i]==nod[17] || contres[i]==nod[21] || contres[i]==nod[23] || contres[i]==nod[28] || contres[i]==nod[44] || contres[i]==nod[47]){
 				if(found[i]){
 					image=image+maxage[i];
@@ -501,7 +504,7 @@ echo "<br>";
 						coun7++;
 					}
 				}
-			//null	
+			//Ομάδα null όλων και κάθε παρόχου ξεχωριστά	
 			}else if(contres[i]==nod[13] || contres[i]==nod[24]){
 				if(found[i]){
 					keno=keno+maxage[i];
@@ -535,7 +538,8 @@ echo "<br>";
 						coun10++;
 					}
 				}
-			//other	6 22 36 37 38 45 50 51 55 58
+			//Τα υπόλοιπα(other) βρίσκονται στις θέσεις του πίνακα contres:6, 22, 36, 37, 38, 45, 50, 51, 55, 58.
+			//Ομάδα other όλων και κάθε παρόχου ξεχωριστά
 			}else{
 				if(found[i]){
 					other=other+maxage[i];
@@ -574,6 +578,7 @@ echo "<br>";
 			
 		
 		}
+		// Εύρεση μέσων όρων
 		texthtml=texthtml/counter;
 		textcss=textcss/counter1;
 		textplain=textplain/counter2;
@@ -616,7 +621,7 @@ echo "<br>";
         textcssfor=textcssfor/count4;
         textcsswin=textcsswin/count5;
 		
-		/*Δημιουργία Βασικού Γραφήματος*/
+		/*Δημιουργία Βασικού Γραφήματος TTL Analysis per Content Type*/
 		var ctx=document.getElementById('chartContainer');
 		window.chart = new Chart(ctx, {
 			type: 'bar',
@@ -670,7 +675,7 @@ echo "<br>";
 				}
 			}
 		});
-		console.log(texthtmlfor);
+		
 	}
 	
 	
