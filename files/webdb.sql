@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2021 at 03:04 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: May 06, 2021 at 09:07 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -3150,13 +3150,13 @@ INSERT INTO `hrequest` (`idhrequest`, `contentType`, `cacheControl`, `pragma`, `
 
 CREATE TABLE `hresponse` (
   `idhresponse` int(11) NOT NULL,
-  `contentType` varchar(300) DEFAULT NULL,
-  `cacheControl` varchar(300) DEFAULT NULL,
-  `pragma` varchar(300) DEFAULT NULL,
-  `expires` varchar(300) DEFAULT NULL,
-  `age` varchar(300) DEFAULT NULL,
-  `lastModified` varchar(300) DEFAULT NULL,
-  `host` varchar(300) DEFAULT NULL,
+  `contentTyperes` varchar(300) DEFAULT NULL,
+  `cacheControlres` varchar(300) DEFAULT NULL,
+  `pragmares` varchar(300) DEFAULT NULL,
+  `expiresres` varchar(300) DEFAULT NULL,
+  `ageres` varchar(300) DEFAULT NULL,
+  `lastModifiedres` varchar(300) DEFAULT NULL,
+  `hostres` varchar(300) DEFAULT NULL,
   `identries` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -3164,7 +3164,7 @@ CREATE TABLE `hresponse` (
 -- Dumping data for table `hresponse`
 --
 
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (1, 'text/html; charset=UTF-8', '', '', '', '', '', '', 1),
 (2, 'text/css', '', '', '', '', '', '', 2),
 (3, 'text/css', '', '', '', '', 'Fri, 12 Mar 2021 09:17:11 GMT', '', 2),
@@ -3487,7 +3487,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (320, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '14394', 'Thu, Sep 26 2019 11:30:25 GMT', 'collector-654.tvsquared.com', 91),
 (321, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '14394', 'Thu, Sep 26 2019 11:30:25 GMT', 'collector-654.tvsquared.com', 91),
 (322, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '14394', 'Thu, Sep 26 2019 11:30:27 GMT', 'collector-654.tvsquared.com', 91);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (323, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '69455', 'Thu, Sep 26 2019 11:30:27 GMT', 'collector-654.tvsquared.com', 91),
 (324, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '69455', 'Thu, Sep 26 2019 11:30:27 GMT', 'collector-654.tvsquared.com', 91),
 (325, 'image/png', 'public, max-age=86400', 'no-cache', 'Sat, 13 Mar 2021 19:58:11 GMT', '69455', 'Thu, Sep 26 2019 11:30:27 GMT', 'collector-654.tvsquared.com', 92),
@@ -3825,7 +3825,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (657, 'text/css', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Sun, 07 Mar 2021 10:48:46 GMT', 'www.ceid.upatras.gr', 178),
 (658, 'text/css', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Sun, 07 Mar 2021 10:48:46 GMT', 'www.ceid.upatras.gr', 178),
 (659, 'text/css', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Thu, 18 Feb 2021 16:10:33 GMT', 'www.ceid.upatras.gr', 179);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (660, 'text/javascript', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Thu, 18 Feb 2021 16:10:33 GMT', 'www.ceid.upatras.gr', 179),
 (661, 'text/javascript', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Thu, 18 Feb 2021 16:10:33 GMT', 'www.ceid.upatras.gr', 179),
 (662, 'text/javascript', 'max-age=1209600', '', 'Wed, 31 Mar 2021 14:31:37 GMT', '587045', 'Thu, 18 Feb 2021 16:10:33 GMT', 'www.ceid.upatras.gr', 179),
@@ -4160,7 +4160,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (991, 'image/jpeg', 'max-age=630720000,public', '', 'Tue, 12 Mar 2041 07:00:05 GMT', '165102', 'Fri, 19 Feb 2021 19:28:13 GMT', '', 261),
 (992, 'image/jpeg', 'max-age=630720000,public', '', 'Tue, 12 Mar 2041 07:00:05 GMT', '165102', 'Tue, 16 Mar 2021 17:54:39 GMT', '', 261),
 (993, 'image/jpeg', 'max-age=630720000,public', '', 'Tue, 12 Mar 2041 07:00:05 GMT', '26802', 'Tue, 16 Mar 2021 17:54:39 GMT', '', 261);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (994, 'text/html; charset=UTF-8', 'max-age=630720000,public', '', 'Tue, 12 Mar 2041 07:00:05 GMT', '26802', 'Tue, 16 Mar 2021 17:54:39 GMT', '', 262),
 (995, 'text/html; charset=UTF-8', 'max-age=630720000,public', '', 'Mon, 11 Mar 2041 23:47:10 GMT', '26802', 'Tue, 16 Mar 2021 17:54:39 GMT', '', 262),
 (996, 'text/html; charset=UTF-8', 'max-age=630720000,public', '', 'Mon, 11 Mar 2041 23:47:10 GMT', '26802', 'Tue, 16 Mar 2021 17:54:39 GMT', '', 262),
@@ -4498,9 +4498,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (1328, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Wed, 24 Aug 2011 08:37:17 GMT', '', 368),
 (1329, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:23 GMT', '', 369),
 (1330, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:23 GMT', '', 369),
-(1331, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:23 GMT', '', 369),
-(1332, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:25 GMT', '', 370);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(1331, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:23 GMT', '', 369);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(1332, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:25 GMT', '', 370),
 (1333, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:25 GMT', '', 370),
 (1334, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:25 GMT', '', 370),
 (1335, 'image/webp', 'public, max-age=2592000, s-maxage=3600', '', 'Fri, 26 Mar 2021 13:58:23 GMT', '106', 'Tue, 03 Sep 2013 22:26:23 GMT', '', 371),
@@ -4839,9 +4839,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (1668, 'image/jpeg', 'max-age=300', '', '', '68981', 'Wed, 23 Jan 2019 10:35:02 GMT', 'cdn.branch.io', 471),
 (1669, 'image/jpeg', 'max-age=300', '', '', '68981', 'Tue, 17 Mar 2020 07:59:17 GMT', 'cdn.branch.io', 471),
 (1670, 'image/jpeg', 'max-age=300', '', '', '69842', 'Tue, 17 Mar 2020 07:59:17 GMT', 'cdn.branch.io', 471),
-(1671, 'binary/octet-stream', 'max-age=300', '', '', '69842', 'Tue, 17 Mar 2020 07:59:17 GMT', 'cdn.branch.io', 472),
-(1672, 'binary/octet-stream', 'max-age=300', '', '', '69842', 'Tue, 27 Oct 2020 08:55:11 GMT', 'cdn.branch.io', 472);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(1671, 'binary/octet-stream', 'max-age=300', '', '', '69842', 'Tue, 17 Mar 2020 07:59:17 GMT', 'cdn.branch.io', 472);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(1672, 'binary/octet-stream', 'max-age=300', '', '', '69842', 'Tue, 27 Oct 2020 08:55:11 GMT', 'cdn.branch.io', 472),
 (1673, 'binary/octet-stream', 'public, max-age=31536000, immutable', '', '', '69842', 'Tue, 27 Oct 2020 08:55:11 GMT', 'cdn.branch.io', 472),
 (1674, 'binary/octet-stream', 'public, max-age=31536000, immutable', '', '', '12044780', 'Tue, 27 Oct 2020 08:55:11 GMT', 'cdn.branch.io', 472),
 (1675, 'binary/octet-stream', 'public, max-age=31536000, immutable', '', '', '12044780', 'Tue, 27 Oct 2020 08:55:11 GMT', 'cdn.branch.io', 473),
@@ -5142,7 +5142,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (1970, 'application/json', 'no-store, no-cache, private', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 569),
 (1971, 'application/json', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 569),
 (1972, 'application/json', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 569);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (1973, 'application/json; charset=utf-8', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 570),
 (1974, 'application/json; charset=utf-8', 'no-store, no-cache, private', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 570),
 (1975, 'application/json; charset=utf-8', 'no-store, no-cache, private', 'no-cache', 'Fri, 19 Mar 2021 13:47:24 GMT', '0', 'Tue, 23 Feb 2021 20:47:52 GMT', 'ib.adnxs.com', 570),
@@ -5441,7 +5441,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (2268, 'text/html', 'max-age=86400,s-maxage=86400', 'no-cache', 'Fri, 19 Mar 2021 13:47:26 GMT', '4446', 'Tue, 16 Mar 2021 00:02:05 GMT', 'as-sec.casalemedia.com', 682),
 (2269, 'text/html', 'max-age=86400,s-maxage=86400', 'no-cache', 'Fri, 19 Mar 2021 13:47:26 GMT', '4446', 'Wed, 17 Feb 2021 09:36:16 GMT', 'as-sec.casalemedia.com', 682),
 (2270, 'application/json', 'max-age=86400,s-maxage=86400', 'no-cache', 'Fri, 19 Mar 2021 13:47:26 GMT', '4446', 'Wed, 17 Feb 2021 09:36:16 GMT', 'as-sec.casalemedia.com', 683);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (2271, 'image/gif', 'max-age=86400,s-maxage=86400', 'no-cache', 'Fri, 19 Mar 2021 13:47:26 GMT', '4446', 'Wed, 17 Feb 2021 09:36:16 GMT', 'as-sec.casalemedia.com', 684),
 (2272, 'image/gif', 'no-cache', 'no-cache', 'Fri, 19 Mar 2021 13:47:26 GMT', '4446', 'Wed, 17 Feb 2021 09:36:16 GMT', 'as-sec.casalemedia.com', 684),
 (2273, 'image/gif', 'no-cache', 'no-cache', 'Fri, 19 Mar 2021 13:48:11 GMT', '4446', 'Wed, 17 Feb 2021 09:36:16 GMT', 'as-sec.casalemedia.com', 684),
@@ -5747,7 +5747,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (2573, 'text/html; charset=UTF-8', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 20:14:07 GMT', '63202', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 779),
 (2574, 'image/png', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 20:14:07 GMT', '63202', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 779),
 (2575, 'image/png', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 18:47:34 GMT', '63202', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 780);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (2576, 'image/png', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 18:47:34 GMT', '63202', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 780),
 (2577, 'image/png', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 18:47:34 GMT', '68395', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 780),
 (2578, 'image/png', 'public, max-age=86400', 'no-cache', 'Fri, 19 Mar 2021 18:47:34 GMT', '68395', 'Fri, 19 Mar 2021 12:45:33 GMT', 'm.adnxs.com', 780),
@@ -6012,7 +6012,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (2837, 'image/gif', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:32 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 859),
 (2838, 'image/gif', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:32 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 859),
 (2839, 'image/gif', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:32 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 860);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (2840, 'image/gif', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 19 Mar 2021 13:47:32 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 860),
 (2841, 'image/gif', 'max-age=0, no-cache, no-store', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 860),
 (2842, 'image/gif', 'no-cache, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '71', 'Fri, 08 Apr 2011 23:11:26 GMT', 'stags.bluekai.com', 860),
@@ -6365,7 +6365,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (3189, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 11 Apr 2021 00:51:29 GMT', '1995007', 'Tue, 03 Sep 2019 22:59:37 GMT', '', 934),
 (3190, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 11 Apr 2021 00:51:29 GMT', '1995007', 'Tue, 03 Sep 2019 23:05:12 GMT', '', 934),
 (3191, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 11 Apr 2021 00:51:29 GMT', '1995007', 'Tue, 03 Sep 2019 23:05:12 GMT', '', 934);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (3192, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 11 Apr 2021 00:51:29 GMT', '1995007', 'Tue, 03 Sep 2019 23:05:12 GMT', '', 934),
 (3193, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 28 Mar 2021 11:06:30 GMT', '1995007', 'Tue, 03 Sep 2019 23:05:12 GMT', '', 934),
 (3194, 'image/jpeg', 'max-age=2592000', 'no-cache', 'Sun, 28 Mar 2021 11:06:30 GMT', '822308', 'Tue, 03 Sep 2019 23:05:12 GMT', '', 935),
@@ -6720,7 +6720,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (3543, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1021),
 (3544, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1022),
 (3545, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1022);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (3546, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1022),
 (3547, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1022),
 (3548, 'image/png', 'public, max-age=1296000', '', 'Fri, 19 Mar 2021 18:05:25 GMT', '2631', 'Thu, 18 Mar 2021 22:39:15 GMT', 's3.amazonaws.com', 1023),
@@ -7029,7 +7029,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (3851, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1101),
 (3852, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1101),
 (3853, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1101);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (3854, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1101),
 (3855, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1102),
 (3856, 'application/javascript', 'max-age=10368000', '', 'Sat, 17 Jul 2021 13:49:39 GMT', '', 'Sat, 07 Dec 2019 03:50:20 GMT', 'www.diaforetiko.gr', 1102),
@@ -7349,7 +7349,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (4170, 'image/jpeg', 'public, max-age=7200', 'no-cache', 'Fri, 12 Mar 2021 07:14:24 GMT', '2351', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1178),
 (4171, 'image/jpeg', 'public, max-age=7200', 'no-cache', 'Fri, 12 Mar 2021 07:14:24 GMT', '2579', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1178),
 (4172, 'image/jpeg', 'public, max-age=86400, no-transform', 'no-cache', 'Fri, 12 Mar 2021 07:14:24 GMT', '2579', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1178);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (4173, 'image/webp', 'public, max-age=86400, no-transform', 'no-cache', 'Fri, 12 Mar 2021 07:14:24 GMT', '2579', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1179),
 (4174, 'image/webp', 'public, max-age=86400, no-transform', 'no-cache', 'Fri, 12 Mar 2021 20:02:04 GMT', '2579', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1179),
 (4175, 'image/webp', 'public, max-age=300', 'no-cache', 'Fri, 12 Mar 2021 20:02:04 GMT', '2579', 'Wed, 24 Jul 2019 01:18:37 GMT', '', 1179),
@@ -7677,7 +7677,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (4497, 'image/gif', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1262),
 (4498, 'image/gif', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1262),
 (4499, 'image/gif', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1262);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (4500, 'text/plain', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1262),
 (4501, 'text/plain', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1263),
 (4502, 'text/plain', 'no-cache, no-store, must-revalidate', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '1773', 'Sun, 17 May 1998 03:00:00 GMT', 'www.e-shop.gr', 1263),
@@ -8044,7 +8044,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (4863, 'text/javascript', 'private, max-age=0, no-cache, no-store', 'no-cache', 'Thu, 18 Mar 2021 12:34:33 GMT', '403', 'Tue, 16 Mar 2021 21:56:05 GMT', 'public-gr.custhelp.com', 1384),
 (4864, 'application/javascript;charset=UTF-8', 'private, max-age=0, no-cache, no-store', 'no-cache', 'Thu, 18 Mar 2021 12:34:33 GMT', '403', 'Tue, 16 Mar 2021 21:56:05 GMT', 'public-gr.custhelp.com', 1384),
 (4865, 'application/javascript;charset=UTF-8', 'private, max-age=0, no-cache, no-store', 'no-cache', 'Thu, 01 Jan 1970 00:00:00 UTC', '403', 'Tue, 16 Mar 2021 21:56:05 GMT', 'public-gr.custhelp.com', 1384);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (4866, 'application/javascript', 'private, max-age=0, no-cache, no-store', 'no-cache', 'Thu, 01 Jan 1970 00:00:00 UTC', '403', 'Tue, 16 Mar 2021 21:56:05 GMT', 'trout.bitrec.com', 1385),
 (4867, 'application/javascript', 'private, max-age=0, no-cache, no-store', 'no-cache', 'Thu, 01 Jan 1970 00:00:00 UTC', '403', 'Wed, 10 Mar 2021 11:12:24 GMT', 'trout.bitrec.com', 1385),
 (4868, 'application/javascript', 'public, max-age=456', 'no-cache', 'Thu, 01 Jan 1970 00:00:00 UTC', '403', 'Wed, 10 Mar 2021 11:12:24 GMT', 'trout.bitrec.com', 1385),
@@ -8346,7 +8346,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (5164, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Sun, 20 Mar 2022 12:41:46 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1495),
 (5165, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Sun, 20 Mar 2022 12:41:46 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1496),
 (5166, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Sun, 20 Mar 2022 12:41:46 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1496);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (5167, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Fri, 18 Mar 2022 21:42:10 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1496),
 (5168, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Fri, 18 Mar 2022 21:42:10 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1496),
 (5169, 'application/x-javascript; charset=utf-8', 'public,max-age=31536000,immutable', 'no-cache', 'Fri, 18 Mar 2022 21:42:10 GMT', '14853', 'Mon, 01 Jan 2001 08:00:00 GMT', 'marketing.nerdom.gr', 1497),
@@ -8653,7 +8653,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (5470, 'font/woff2', 's-maxage=10', 'no-cache', 'Mon, 28 Feb 2022 08:05:46 GMT', '16171', 'Wed, 13 Feb 2019 17:18:31 GMT', '', 1577),
 (5471, 'font/woff2', 's-maxage=10', 'no-cache', 'Mon, 28 Feb 2022 08:05:46 GMT', '16171', 'Tue, 15 Sep 2020 18:09:18 GMT', '', 1578),
 (5472, 'font/woff2', 's-maxage=10', 'no-cache', 'Mon, 28 Feb 2022 08:05:46 GMT', '476658', 'Tue, 15 Sep 2020 18:09:18 GMT', '', 1578);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (5473, 'font/woff2', 's-maxage=10', 'no-cache', 'Mon, 28 Feb 2022 08:05:46 GMT', '476658', 'Tue, 15 Sep 2020 18:09:18 GMT', '', 1578),
 (5474, 'font/woff2', 'public, max-age=31536000', 'no-cache', 'Mon, 28 Feb 2022 08:05:46 GMT', '476658', 'Tue, 15 Sep 2020 18:09:18 GMT', '', 1578),
 (5475, 'font/woff2', 'public, max-age=31536000', 'no-cache', 'Fri, 04 Mar 2022 19:41:27 GMT', '476658', 'Tue, 15 Sep 2020 18:09:18 GMT', '', 1578),
@@ -8977,7 +8977,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (5793, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '119921', 'Thu, 11 Jun 2020 11:02:51 GMT', 'www.onetv.gr', 1669),
 (5794, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '106089', 'Thu, 11 Jun 2020 11:02:51 GMT', 'www.onetv.gr', 1670),
 (5795, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '106089', 'Thu, 11 Jun 2020 11:02:51 GMT', 'www.onetv.gr', 1670);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (5796, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '106089', 'Thu, 11 Jun 2020 11:02:51 GMT', 'www.onetv.gr', 1670),
 (5797, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '162063', 'Thu, 11 Jun 2020 11:02:51 GMT', 'www.onetv.gr', 1671),
 (5798, 'binary/octet-stream', 'max-age=31556926,public', 'no-cache', 'Fri, 18 Feb 2022 21:02:47 GMT', '162063', 'Thu, 11 Jun 2020 11:02:55 GMT', 'www.onetv.gr', 1671),
@@ -9314,7 +9314,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (6129, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '5544', 'Thu, 24 Sep 2020 07:50:49 GMT', '', 1780),
 (6130, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '5544', 'Tue, 04 Aug 2020 07:50:37 GMT', '', 1780),
 (6131, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '5544', 'Tue, 04 Aug 2020 07:50:37 GMT', '', 1780);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (6132, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '5544', 'Tue, 04 Aug 2020 07:50:37 GMT', '', 1780),
 (6133, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '2236', 'Tue, 04 Aug 2020 07:50:37 GMT', '', 1781),
 (6134, 'image/jpeg', 'max-age=14400', 'no-cache', 'Sun, 11 Apr 2021 17:10:42 GMT', '2236', 'Tue, 13 Dec 2016 08:07:30 GMT', '', 1781),
@@ -9671,7 +9671,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (6485, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1877),
 (6486, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1877),
 (6487, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1878);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (6488, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1878),
 (6489, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1878),
 (6490, 'image/jpeg', 'max-age=31536000, public', 'public', 'Fri, 18 Mar 2022 17:40:28 GMT', '', 'Thu, 18 Mar 2021 15:00:00 GMT', '', 1879),
@@ -10019,7 +10019,7 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (6832, 'text/css', 'max-age=2592000', '', 'Mon, 15 Mar 2021 19:34:40 GMT', '432400', 'Mon, 25 Jan 2021 22:04:51 GMT', '', 1977),
 (6833, 'text/css', 'max-age=2592000', '', 'Sat, 03 Apr 2021 13:18:26 GMT', '432400', 'Mon, 25 Jan 2021 22:04:51 GMT', '', 1977),
 (6834, 'text/css', 'max-age=2592000', '', 'Sat, 03 Apr 2021 13:18:26 GMT', '432400', 'Wed, 22 Nov 2017 15:22:34 GMT', '', 1977);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (6835, 'text/css', 'max-age=2592000', '', 'Sat, 03 Apr 2021 13:18:26 GMT', '972974', 'Wed, 22 Nov 2017 15:22:34 GMT', '', 1977),
 (6836, 'text/css', 'max-age=2592000', '', 'Sat, 03 Apr 2021 13:18:26 GMT', '972974', 'Wed, 22 Nov 2017 15:22:34 GMT', '', 1978),
 (6837, 'text/css', 'max-age=2592000', '', 'Sat, 03 Apr 2021 13:18:26 GMT', '972974', 'Thu, 07 Dec 2017 09:44:04 GMT', '', 1978),
@@ -10384,9 +10384,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (7196, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '423400', 'Thu, 10 Sep 2020 17:04:37 GMT', 'd31qbv1cthcecs.cloudfront.net', 2061),
 (7197, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '423400', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2061),
 (7198, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2061),
-(7199, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2061),
-(7200, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2062);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(7199, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2061);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(7200, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 11:40:52 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2062),
 (7201, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 21:58:21 GMT', '460451', 'Thu, 10 Sep 2020 17:02:50 GMT', 'd31qbv1cthcecs.cloudfront.net', 2062),
 (7202, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 21:58:21 GMT', '460451', 'Tue, 15 Sep 2020 18:11:00 GMT', 'd31qbv1cthcecs.cloudfront.net', 2062),
 (7203, 'font/woff2', 'public, max-age=31536000', '', 'Thu, 10 Mar 2022 21:58:21 GMT', '317911', 'Tue, 15 Sep 2020 18:11:00 GMT', 'd31qbv1cthcecs.cloudfront.net', 2062),
@@ -10685,10 +10685,10 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (7496, 'text/css', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 24 Oct 2014 00:16:08 GMT', 'www.keeppet.gr', 2135),
 (7497, 'text/css', 'max-age=315360000', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 24 Oct 2014 00:16:08 GMT', 'www.keeppet.gr', 2135),
 (7498, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 24 Oct 2014 00:16:08 GMT', 'www.keeppet.gr', 2135),
-(7499, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 24 Oct 2014 00:16:08 GMT', 'www.keeppet.gr', 2136),
+(7499, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 24 Oct 2014 00:16:08 GMT', 'www.keeppet.gr', 2136);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (7500, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2136),
-(7501, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2136);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(7501, 'text/css', 'public', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2136),
 (7502, 'text/css', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2136),
 (7503, 'text/css', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2137),
 (7504, 'text/css', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:17 GMT', '105509', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2137),
@@ -11002,9 +11002,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (7812, 'image/jpeg', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2216),
 (7813, 'image/jpeg', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2216),
 (7814, 'image/jpeg', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2216),
-(7815, 'image/jpeg', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2216),
-(7816, 'application/octet-stream', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2217);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(7815, 'image/jpeg', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2216);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(7816, 'application/octet-stream', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2217),
 (7817, 'application/octet-stream', 'max-age=31536000', 'no-cache', 'Sun, 06 Mar 2022 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2217),
 (7818, 'application/octet-stream', 'max-age=31536000', 'no-cache', 'Thu, 02 Sep 2021 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2217),
 (7819, 'application/octet-stream', 'max-age=15552000', 'no-cache', 'Thu, 02 Sep 2021 15:13:18 GMT', '110729', 'Fri, 01 Jul 2016 13:38:32 GMT', 'www.keeppet.gr', 2217),
@@ -11320,9 +11320,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (8129, 'text/javascript', 'private, immutable, max-age=31536000', '', 'Sun, 14 Mar 2021 17:58:16 GMT', '466', 'Tue, 09 Mar 2021 09:39:28 GMT', 'www.in.gr', 2298),
 (8130, 'text/javascript', 'private, immutable, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '466', 'Tue, 09 Mar 2021 09:39:28 GMT', 'www.in.gr', 2298),
 (8131, 'text/javascript', 'private, immutable, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '466', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2298),
-(8132, 'text/javascript', 'public, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '466', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2298),
-(8133, 'text/javascript', 'public, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '131722', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2298);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(8132, 'text/javascript', 'public, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '466', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2298);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(8133, 'text/javascript', 'public, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '131722', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2298),
 (8134, 'text/css', 'public, max-age=31536000', '', 'Sun, 13 Mar 2022 07:42:58 GMT', '131722', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2299),
 (8135, 'text/css', 'public, max-age=31536000', '', 'Fri, 11 Mar 2022 07:23:27 GMT', '131722', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2299),
 (8136, 'text/css', 'public, max-age=31536000', '', 'Fri, 11 Mar 2022 07:23:27 GMT', '131722', 'Wed, 27 Jan 2021 19:23:46 GMT', 'www.in.gr', 2299),
@@ -11681,9 +11681,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (8489, 'text/css', 'max-age=3524', '', 'Fri, 12 Mar 2021 16:40:21 GMT', '', 'Mon, 21 Dec 2020 13:37:15 GMT', '', 2379),
 (8490, 'text/css', 'max-age=3524', '', 'Fri, 12 Mar 2021 16:40:21 GMT', '', 'Mon, 21 Dec 2020 13:37:15 GMT', '', 2379),
 (8491, 'text/css', 'max-age=3524', '', 'Fri, 12 Mar 2021 16:40:21 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380),
-(8492, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 16:40:21 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380),
-(8493, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 15:58:28 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(8492, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 16:40:21 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(8493, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 15:58:28 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380),
 (8494, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 15:58:28 GMT', '', 'Mon, 21 Dec 2020 13:37:07 GMT', '', 2380),
 (8495, 'text/css', 'max-age=1012', '', 'Fri, 12 Mar 2021 15:58:28 GMT', '', 'Mon, 21 Dec 2020 13:37:08 GMT', '', 2381),
 (8496, 'text/css', 'max-age=3184', '', 'Fri, 12 Mar 2021 15:58:28 GMT', '', 'Mon, 21 Dec 2020 13:37:08 GMT', '', 2381),
@@ -12024,9 +12024,9 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (8831, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '70789', 'Thu, 17 Dec 2020 00:43:15 GMT', 'thunder.adnxs.com', 2472),
 (8832, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '70789', 'Thu, 17 Dec 2020 00:43:15 GMT', 'thunder.adnxs.com', 2473),
 (8833, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '70789', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2473),
-(8834, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '70789', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2473),
-(8835, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '58924', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2473);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(8834, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '70789', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2473);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
+(8835, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '58924', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2473),
 (8836, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '58924', 'Thu, 17 Dec 2020 00:44:38 GMT', 'thunder.adnxs.com', 2474),
 (8837, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '58924', 'Thu, 17 Dec 2020 00:44:47 GMT', 'thunder.adnxs.com', 2474),
 (8838, 'application/javascript', 'max-age=86400', 'no-cache', 'Fri, 01 Jan 1990 00:00:00 GMT', '58924', 'Thu, 17 Dec 2020 00:44:47 GMT', 'thunder.adnxs.com', 2474),
@@ -12355,10 +12355,10 @@ INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`,
 (9161, 'image/jpeg', 'max-age=14400', '', '', '5977', 'Thu, 18 Mar 2021 23:25:07 GMT', 'platform.twitter.com', 2579),
 (9162, 'image/jpeg', 'max-age=14400', '', '', '5977', 'Thu, 18 Mar 2021 23:25:07 GMT', 'platform.twitter.com', 2579),
 (9163, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:25:07 GMT', 'platform.twitter.com', 2579),
-(9164, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:25:07 GMT', 'platform.twitter.com', 2580),
+(9164, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:25:07 GMT', 'platform.twitter.com', 2580);
+INSERT INTO `hresponse` (`idhresponse`, `contentTyperes`, `cacheControlres`, `pragmares`, `expiresres`, `ageres`, `lastModifiedres`, `hostres`, `identries`) VALUES
 (9165, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:20:39 GMT', 'platform.twitter.com', 2580),
-(9166, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:20:39 GMT', 'platform.twitter.com', 2580);
-INSERT INTO `hresponse` (`idhresponse`, `contentType`, `cacheControl`, `pragma`, `expires`, `age`, `lastModified`, `host`, `identries`) VALUES
+(9166, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:20:39 GMT', 'platform.twitter.com', 2580),
 (9167, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:20:39 GMT', 'platform.twitter.com', 2580),
 (9168, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:20:39 GMT', 'platform.twitter.com', 2581),
 (9169, 'image/jpeg', 'max-age=14400', '', '', '5975', 'Thu, 18 Mar 2021 23:16:42 GMT', 'platform.twitter.com', 2581),
