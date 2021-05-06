@@ -61,6 +61,10 @@ echo "<br>";
 	$result=mysqli_query($conn,"SELECT * FROM harfiles WHERE iduserinfo='".$idu."'"); 
 	$count=mysqli_num_rows($result);//pairnoume to plhthos twn eggrafwn pou ekane o xrhsths
 	echo "Πλήθος εγγραφών που αναρτήθηκαν: ".$count;
+		
+	$result1=mysqli_query($conn,"SELECT * FROM entries INNER JOIN harfiles  ON entries.idharfiles=harfiles.idharfiles WHERE iduserinfo='".$idu."'"); 
+	$count1=mysqli_num_rows($result1);//pairnoume to plhthos twn eggrafwn pou ekane o xrhsths
+	echo ", στα οποία αντιστοιχούν: ".$count1." entries.";
 	echo "<br>";
 	
 	?>

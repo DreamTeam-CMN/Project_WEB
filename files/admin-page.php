@@ -21,6 +21,9 @@ echo "<br>";
   <br>
   <br>
   <input type="submit" name ="graphhe" value="Headers charts">
+  <br>
+  <br>
+  <input type="submit" name ="amap" value="Map">
   </form>
   <?php
   
@@ -30,6 +33,10 @@ echo "<br>";
   
   if (isset($_POST["graphhe"])){
 	header('Location: graph.headers-system.php');
+  }
+  
+   if (isset($_POST["amap"])){
+	header('Location: admin-map.php');
   }
   
   $result=mysqli_query($conn,"SELECT * FROM userinfo"); 
