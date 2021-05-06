@@ -30,6 +30,8 @@ echo "<br>";
    <input type="submit" name ="upload" value="Upload">
    <p>Αν θες να κάνεις διαχείρηση πληροφοριών πάτα εδώ</p>
    <input type="submit" name ="profile" value="Profile Management">
+   <p>Αν θες να δεις το χάρτη πάτα εδώ</p>
+   <input type="submit" name ="map" value="Map">
    </form>
    
    <!--Σύνδεση με την σελίδα home.buttons-systems.php-->

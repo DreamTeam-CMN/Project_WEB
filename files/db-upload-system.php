@@ -23,7 +23,7 @@ if(isset($_POST["ucity"]) && isset($_POST["geo"]) && isset($_POST["geo2"]) && is
 	$result=mysqli_fetch_array($iduser);
 	$idu=$result['iduserinfo'];
 	
-	$url='http://ipinfo.io/' .$sip; //doulevei mono gia ipv4, oxi gia ipv6
+	/*$url='http://ipinfo.io/' .$sip; //doulevei mono gia ipv4, oxi gia ipv6
 	$ch=curl_init($url);
 	curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
 	$data=curl_exec($ch);
@@ -31,7 +31,7 @@ if(isset($_POST["ucity"]) && isset($_POST["geo"]) && isset($_POST["geo2"]) && is
 	$ret_array=json_decode($data,TRUE);
 	print "<pre>";
 	print_r($ret_array);
-	print "</pre>";
+	print "</pre>";*/
 	
 	$sql = "INSERT INTO harfiles (harname , city , date , ipaddress , provider , iduserinfo , latitude , longitude ) VALUES (?,?,?,?,?,?,?,?)";
 	$stmt= $conn->prepare($sql);
