@@ -34,9 +34,16 @@ echo "<br>";
   <script>
 var info=new Array();
 var sip=new Array();
+var sip1=new Array();
 var dom=new Array();
 var ent=new Array();
 var nds=new Array();
+var ndu=new Array();
+var url=new Array();
+var cnt=new Array();
+var comma= " , ";
+var mapdom= new Array();
+
 
   var xhr = new XMLHttpRequest();
 	xhr.open("POST", "user-map-system.php");
@@ -53,7 +60,9 @@ var nds=new Array();
 			sip[i]=info[i][0].slice(1,-1);
 			dom[i]=info[i][1].slice(1,-1);
 			ent[i]=info[i][2].slice(1,-1)*1;
-			getloc(sip[i],dom[i]);
+			url[i]=info[i][3].slice(1,-1);
+			
+			
 		}
 		
 		for (var i=0;i<sip.length;i++){
@@ -68,8 +77,48 @@ var nds=new Array();
 				nds.push(sip[i]);
 			}
 		}
-		//console.log(nds); // counter gia to plhthos tn ip sta marker
-
+		for (var i=0;i<url.length;i++){
+			let exists=false;
+			for (var j=0;j<ndu.length;j++){
+				if (url[i]===ndu[j]){
+					exists=true;
+					break;
+				}
+			}
+			if (!exists){
+				ndu.push(url[i]);
+			}
+		}
+		
+		for (var i=0; i<nds.length; i++){
+			cnt[i]=0;
+			mapdom[i]=" ";
+			
+		}
+		
+		for (var i=0; i<sip.length; i++){
+			var found=false;
+			for (var j=0; j<nds.length; j++){
+				if (sip[i]==nds[j]){
+					cnt[j]=cnt[j]+1;
+					var n = mapdom[j].search(url[i]);
+					if(n==-1){
+						mapdom[j]= mapdom[j]+ " , " + url[i];
+						sip1[j]= sip[i];
+					}
+				}	
+			}	
+		}
+		
+		for (var i=0; i<mapdom.length; i++){
+			mapdom[i]=mapdom[i].slice(4);
+			cnt[i]= cnt[i].toString();
+			mapdom[i]= "The domains are: " + mapdom[i]+ " and were found " + cnt[i] + " requests.";
+		}
+		for (var i=0; i<sip1.length; i++){
+			getloc(sip1[i], mapdom[i]);
+		}
+		
 		var mymap = L.map('mapid').setView([37.9842, 23.7353], 4);
 		const attribution='&copy? <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 		const tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -91,5 +140,3 @@ var nds=new Array();
   
   </body>
 </html>
-
-
