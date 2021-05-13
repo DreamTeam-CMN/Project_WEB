@@ -18,12 +18,15 @@ $result=mysqli_fetch_array($iduser);
 $idu=$result['iduserinfo'];
 	
 $mapTable=array();	
-$array=mysqli_query($conn,"SELECT entries.serverIPAddress, entries.requestUrl, entries.identries, entries.idharfiles, harfiles.idharfiles, harfiles.iduserinfo 
+$array=mysqli_query($conn,"SELECT entries.serverIPAddress, entries.requestUrl , entries.identries, entries.idharfiles, harfiles.idharfiles, harfiles.iduserinfo , harfiles.harname
 FROM entries INNER JOIN harfiles ON harfiles.idharfiles=entries.idharfiles WHERE harfiles.iduserinfo='".$idu."'");
 while ($row=mysqli_fetch_array($array)){
 	$mapTable[0]=$row['serverIPAddress'];
 	$mapTable[1]=$row['requestUrl'];
 	$mapTable[2]=$row['identries'];
+	$mapTable[3]=$row['harname'];
 	echo json_encode($mapTable);
+		
 }
+
 ?>

@@ -97,7 +97,7 @@ var mapdom= new Array();
 		}
 		
 		for (var i=0; i<sip.length; i++){
-			var found=false;
+			
 			for (var j=0; j<nds.length; j++){
 				if (sip[i]==nds[j]){
 					cnt[j]=cnt[j]+1;
