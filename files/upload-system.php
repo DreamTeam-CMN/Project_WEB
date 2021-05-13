@@ -3,8 +3,6 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
 
 /*Φόρτωση του username του εκάστοτε χρήστη*/
 session_start();

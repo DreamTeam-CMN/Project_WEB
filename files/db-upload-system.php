@@ -1,5 +1,5 @@
 <?php
-
+//απόκτηση και ανέβασμα αρχείων στην βάση έπειτα από την επεξεργασία 
 if(isset($_POST["ucity"]) && isset($_POST["geo"]) && isset($_POST["geo2"]) && isset($_POST["org"]) && isset($_POST["uip"]) && isset($_POST["serverip"]) && isset($_POST["urL"])) {
 	
 	$city=$_POST['ucity'];
@@ -23,16 +23,8 @@ if(isset($_POST["ucity"]) && isset($_POST["geo"]) && isset($_POST["geo2"]) && is
 	$result=mysqli_fetch_array($iduser);
 	$idu=$result['iduserinfo'];
 	
-	/*$url='http://ipinfo.io/' .$sip; //doulevei mono gia ipv4, oxi gia ipv6
-	$ch=curl_init($url);
-	curl_setopt($ch,CURLOPT_RETURNTRANSFER,TRUE);
-	$data=curl_exec($ch);
-	curl_close($ch);
-	$ret_array=json_decode($data,TRUE);
-	print "<pre>";
-	print_r($ret_array);
-	print "</pre>";*/
 	
+	//εισαγωγή στη βάση δεδομένων
 	$sql = "INSERT INTO harfiles (harname , city , date , ipaddress , provider , iduserinfo , latitude , longitude ) VALUES (?,?,?,?,?,?,?,?)";
 	$stmt= $conn->prepare($sql);
 	$stmt->bind_param("ssssssss", $harname , $city, $date, $userip, $provider, $idu, $lat, $lon );

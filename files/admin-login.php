@@ -2,11 +2,10 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
+
 
 ?>
-
+<!-- HTML για τη σελίδα του διαχειριστή.-->
 <!DOCTYPE html>
 <html>
   <head>

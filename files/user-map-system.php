@@ -1,5 +1,5 @@
 <?php
-
+//εκτέλεση τψν queries από τη βάση ώστε να σταλούν στο user-map.php και να δημιουργηθεί ο χάρτης
  $servername="localhost";
   $username="root";
   $password="";
@@ -17,7 +17,7 @@ $iduser=mysqli_query($conn,"SELECT iduserinfo FROM userinfo WHERE username='".$u
 $result=mysqli_fetch_array($iduser);
 $idu=$result['iduserinfo'];
 	
-$mapTable=array();	
+$mapTable=array();	// αρχικοποίηση του πίνακα για την αποθήκευση των στοιχείων της βάσης
 $array=mysqli_query($conn,"SELECT entries.serverIPAddress, entries.requestUrl , entries.identries, entries.idharfiles, harfiles.idharfiles, harfiles.iduserinfo , harfiles.harname
 FROM entries INNER JOIN harfiles ON harfiles.idharfiles=entries.idharfiles WHERE harfiles.iduserinfo='".$idu."'");
 while ($row=mysqli_fetch_array($array)){
@@ -25,7 +25,7 @@ while ($row=mysqli_fetch_array($array)){
 	$mapTable[1]=$row['requestUrl'];
 	$mapTable[2]=$row['identries'];
 	$mapTable[3]=$row['harname'];
-	echo json_encode($mapTable);
+	echo json_encode($mapTable);//κωδικοποίηση για αποστολή στο user-map.php αρχείο
 		
 }
 

@@ -1,9 +1,8 @@
 <?php
-
+//αρχική σελίδα΄του διαχειριστή και εμφάνιση πινάκων.
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
+
 
 ?>
 
@@ -26,31 +25,31 @@ echo "<br>";
   <input type="submit" name ="amap" value="Map">
   </form>
   <?php
-  
+  //κουμπι για τα timings charts
   if (isset($_POST["grapht"])){
 	header('Location: graph.timings-system.php');
   }
-  
+  //κουμπι για τα headers charts
   if (isset($_POST["graphhe"])){
 	header('Location: graph.headers-system.php');
   }
-  
+  //κουμπι για το χάρτη
    if (isset($_POST["amap"])){
 	header('Location: admin-map.php');
   }
-  
+  //query για την απόκτηση του αριθμού των εγγεγραμένων χρηστών.
   $result=mysqli_query($conn,"SELECT * FROM userinfo"); 
   $count=mysqli_num_rows($result);
   $count--;
   echo "<br>";
-  
+  //απόκτηση των μοναδικών domain που υπάρχουν
   $domain=mysqli_query($conn,"SELECT DISTINCT requestUrl FROM entries"); 
   $count1=mysqli_num_rows($domain);
   echo "<br>";
-  
+  //απόκτηση μοναδικών παρόχων.
   $pro=mysqli_query($conn,"SELECT DISTINCT provider FROM harfiles"); 
   $count2=mysqli_num_rows($pro);
-   
+  //δημιουργία πινάκων 
   echo "<table border='1'>
 	<tr>
 	<th>Basic statistics</th>
@@ -78,6 +77,7 @@ echo "<br>";
 	<th>Request Method</th>
 	<th>Total</th>
 	</tr>";
+	//Το πλήθος των εγγραφών στη βάση ανά τύπο (μέθοδο) αίτησης
   $plreq=mysqli_query($conn,"SELECT COUNT(*) requestMethod  FROM entries GROUP BY requestMethod");
   $reqname=mysqli_query($conn,"SELECT requestMethod  FROM entries GROUP BY requestMethod");
   while ($row1=mysqli_fetch_array($reqname)){
@@ -100,6 +100,7 @@ echo "<br>";
 	<th>Response Status</th>
 	<th>Total</th>
 	</tr>";
+	//Το πλήθος των εγγραφών στη βάση ανά κωδικό (status) απόκρισης
   $plres=mysqli_query($conn,"SELECT COUNT(*) responseStatus  FROM entries GROUP BY responseStatus");
   $resname=mysqli_query($conn,"SELECT responseStatus  FROM entries GROUP BY responseStatus");
   while ($row1=mysqli_fetch_array($resname)){
@@ -122,6 +123,7 @@ echo "<br>";
   <th>Content Type</th>
   <th>Average Age</th>
   </tr>";
+  //Η μέση ηλικία των ιστοαντικειμένων τη στιγμή που ανακτήθηκαν, ανά CONTENT-TYPE
   $avgage=mysqli_query($conn,"SELECT AVG(ageres) FROM hresponse GROUP BY contentTyperes");
   $avgname=mysqli_query($conn,"SELECT contentTyperes FROM hresponse GROUP BY contentTyperes");
 	while ($row1=mysqli_fetch_array($avgname)){

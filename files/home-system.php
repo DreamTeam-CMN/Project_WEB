@@ -2,8 +2,6 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
 
 session_start();
 $user = $_SESSION['user'];
