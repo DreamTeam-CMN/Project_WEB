@@ -744,7 +744,8 @@ var pubo=0;
 			
 		
 		}
-		texthtml=texthtml/counter;
+		
+		/*texthtml=texthtml/counter;
 		textcss=textcss/counter1;
 		textplain=textplain/counter2;
 		textjs=textjs/counter3;
@@ -784,7 +785,8 @@ var pubo=0;
         texthtmalwin=texthtmlwin/count2;
         textcssote=textcssote/count3;
         textcssfor=textcssfor/count4;
-        textcsswin=textcsswin/count5;
+        textcsswin=textcsswin/count5;*/
+		
 		
 				var ctx=document.getElementById('chartContainer');
 		window.chart = new Chart(ctx, {
@@ -1313,175 +1315,174 @@ var pubo=0;
 				}
 			}
 			}
-		}		
-		pubhtml=(pubhtml/cachres.length)*100;
+		}	
+		
+		pubhtml=(pubhtml/(count+count1+count2))*100;
 		pubhtmlote=(pubhtmlote/count)*100;
 		pubhtmlfor=(pubhtmlfor/count1)*100;
 		pubhtmlwin=(pubhtmlwin/count2)*100;
-		prihtml=(prihtml/cachres.length)*100;
+		prihtml=(prihtml/(count+count1+count2))*100;
 		prihtmlote=(prihtmlote/count)*100;
 		prihtmlfor=(prihtmlfor/count1)*100;
 		prihtmlwin=(prihtmlwin/count2)*100;
-		nochtml=(nochtml/cachres.length)*100;
+		nochtml=(nochtml/(count+count1+count2))*100;
 		nochtmlote=(nochtmlote/count)*100;
 		nochtmlfor=(nochtmlfor/count1)*100;
 		nochtmlwin=(nochtmlwin/count2)*100;
-		noshtml=(noshtml/cachres.length)*100;
+		noshtml=(noshtml/(count+count1+count2))*100; 
 		noshtmlote=(noshtmlote/count)*100;
 		noshtmlfor=(noshtmlfor/count1)*100;
 		noshtmlwin=(noshtmlwin/count2)*100;
 		
-		pubcss=(pubcss/cachres.length)*100;
+		pubcss=(pubcss/(count3+count4+count5))*100;
 		pubcssote=(pubcssote/count3)*100;
 		pubcssfor=(pubcssfor/count4)*100;
 		pubcsswin=(pubcsswin/count5)*100;
-		pricss=(pricss/cachres.length)*100;
+		pricss=(pricss/(count3+count4+count5))*100;
 		pricssote=(pricssote/count3)*100;
 		pricssfor=(pricssfor/count4)*100;
 		pricsswin=(pricsswin/count5)*100;
-		noccss=(noccss/cachres.length)*100;
+		noccss=(noccss/(count3+count4+count5))*100;
 		noccssote=(noccssote/count3)*100;
 		noccssfor=(noccssfor/count4)*100;
 		noccsswin=(noccsswin/count5)*100;
-		noscss=(noscss/cachres.length)*100;
+		noscss=(noscss/(count3+count4+count5))*100;
 		noscssote=(noscssote/count3)*100;
 		noscssfor=(noscssfor/count4)*100;
 		noscsswin=(noscsswin/count5)*100;
 		
-		pubplain=(pubplain/cachres.length)*100;
+		pubplain=(pubplain/(count6+count7+count8))*100;
 		pubplainote=(pubplainote/count6)*100;
 		pubplainfor=(pubplainfor/count7)*100;
 		pubplainwin=(pubplainwin/count8)*100;
-		priplain=(priplain/cachres.length)*100;
+		priplain=(priplain/(count6+count7+count8))*100;
 		priplainote=(priplainote/count6)*100;
 		priplainfor=(priplainfor/count7)*100;
 		priplainwin=(priplainwin/count8)*100;
-		nocplain=(nocplain/cachres.length)*100;
+		nocplain=(nocplain/(count6+count7+count8))*100;
 		nocplainote=(nocplainote/count6)*100;
 		nocplainfor=(nocplainfor/count7)*100;
 		nocplainwin=(nocplainwin/count8)*100;
-		nosplain=(nosplain/cachres.length)*100;
+		nosplain=(nosplain/(count6+count7+count8))*100;
 		nosplainote=(nosplainote/count6)*100;
-		console.log(nosplainfor);
-		console.log(count7);
 		nosplainfor=(nosplainfor/count7)*100;
 		nosplainwin=(nosplainwin/count8)*100;
 		
-		pubtjs=(pubtjs/cachres.length)*100;
+		pubtjs=(pubtjs/(count9+count10+count11))*100;
 		pubtjsote=(pubtjsote/count9)*100;
 		pubtjsfor=(pubtjsfor/count10)*100;
 		pubtjswin=(pubtjswin/count11)*100;
-		pritjs=(pritjs/cachres.length)*100;
+		pritjs=(pritjs/(count9+count10+count11))*100;
 		pritjsote=(pritjsote/count9)*100;
 		pritjsfor=(pritjsfor/count10)*100;
 		pritjswin=(pritjswin/count11)*100;
-		noctjs=(noctjs/cachres.length)*100;
+		noctjs=(noctjs/(count9+count10+count11))*100;
 		noctjsote=(noctjsote/count9)*100;
 		noctjsfor=(noctjsfor/count10)*100;
 		noctjswin=(noctjswin/count11)*100;
-		nostjs=(nostjs/cachres.length)*100;
+		nostjs=(nostjs/(count9+count10+count11))*100;
 		nostjsote=(nostjsote/count9)*100;
 		nostjsfor=(nostjsfor/count10)*100;
 		nostjswin=(nostjswin/count11)*100;
 		
-		pubfont=(pubfont/cachres.length)*100;
+		pubfont=(pubfont/(count12+count13+count14))*100;
 		pubfontote=(pubfontote/count12)*100;
 		pubfontfor=(pubfontfor/count13)*100;
 		pubfontwin=(pubfontwin/count14)*100;
-		prifont=(prifont/cachres.length)*100;
+		prifont=(prifont/(count12+count13+count14))*100;
 		prifontote=(prifontote/count12)*100;
 		prifontfor=(prifontfor/count13)*100;
 		prifontwin=(prifontwin/count14)*100;
-		nocfont=(nocfont/cachres.length)*100;
+		nocfont=(nocfont/(count12+count13+count14))*100;
 		nocfontote=(nocfontote/count12)*100;
 		nocfontfor=(nocfontfor/count13)*100;
 		nocfontwin=(nocfontwin/count14)*100;
-		nosfont=(nosfont/cachres.length)*100;
+		nosfont=(nosfont/(count12+count13+count14))*100;
 		nosfontote=(nosfontote/count12)*100;
 		nosfontfor=(nosfontfor/count13)*100;
 		nosfontwin=(nosfontwin/count14)*100;
 		
-		pubajs=(pubajs/cachres.length)*100;
+		pubajs=(pubajs/(count15+coun+coun1))*100;
 		pubajsote=(pubajsote/count15)*100;
 		pubajsfor=(pubajsfor/coun)*100;
 		pubajswin=(pubajswin/coun1)*100;
-		priajs=(priajs/cachres.length)*100;
+		priajs=(priajs/(count15+coun+coun1))*100;
 		priajsote=(priajsote/count15)*100;
 		priajsfor=(priajsfor/coun)*100;
 		priajswin=(priajswin/coun1)*100;
-		nocajs=(nocajs/cachres.length)*100;
+		nocajs=(nocajs/(count15+coun+coun1))*100;
 		nocajsote=(nocajsote/count15)*100;
 		nocajsfor=(nocajsfor/coun)*100;
 		nocajswin=(nocajswin/coun1)*100;
-		nosajs=(nosajs/cachres.length)*100;
+		nosajs=(nosajs/(count15+coun+coun1))*100;
 		nosajsote=(nosajsote/count15)*100;
 		nosajsfor=(nosajsfor/coun)*100;
 		nosajswin=(nosajswin/coun1)*100;
 		
-		pubjson=(pubjson/cachres.length)*100;
+		pubjson=(pubjson/(coun2+coun3+coun4))*100;
 		pubjsonote=(pubjsonote/coun2)*100;
 		pubjsonfor=(pubjsonfor/coun3)*100;
 		pubjsonwin=(pubjsonwin/coun4)*100;
-		prijson=(prijson/cachres.length)*100;
+		prijson=(prijson/(coun2+coun3+coun4))*100;
 		prijsonote=(prijsonote/coun2)*100;
 		prijsonfor=(prijsonfor/coun3)*100;
 		prijsonwin=(prijsonwin/coun4)*100;
-		nocjson=(nocjson/cachres.length)*100;
+		nocjson=(nocjson/(coun2+coun3+coun4))*100;
 		nocjsonote=(nocjsonote/coun2)*100;
 		nocjsonfor=(nocjsonfor/coun3)*100;
 		nocjsonwin=(nocjsonwin/coun4)*100;
-		nosjson=(nosjson/cachres.length)*100;
+		nosjson=(nosjson/(coun2+coun3+coun4))*100;
 		nosjsonote=(nosjsonote/coun2)*100;
 		nosjsonfor=(nosjsonfor/coun3)*100;
 		nosjsonwin=(nosjsonwin/coun4)*100;
 		
-		pubim=(pubim/cachres.length)*100;
+		pubim=(pubim/(coun5+coun6+coun7))*100;
 		pubimote=(pubimote/coun5)*100;
 		pubimfor=(pubimfor/coun6)*100;
 		pubimwin=(pubimwin/coun7)*100;
-		priim=(priim/cachres.length)*100;
+		priim=(priim/(coun5+coun6+coun7))*100;
 		priimote=(priimote/coun5)*100;
 		priimfor=(priimfor/coun6)*100;
 		priimwin=(priimwin/coun7)*100;
-		nocim=(nocim/cachres.length)*100;
+		nocim=(nocim/(coun5+coun6+coun7))*100;
 		nocimote=(nocimote/coun5)*100;
 		nocimfor=(nocimfor/coun6)*100;
 		nocimwin=(nocimwin/coun7)*100;
-		nosim=(nosim/cachres.length)*100;
+		nosim=(nosim/(coun5+coun6+coun7))*100;
 		nosimote=(nosimote/coun5)*100;
 		nosimfor=(nosimfor/coun6)*100;
 		nosimwin=(nosimwin/coun7)*100;
 		
-		pubn=(pubn/cachres.length)*100;
+		pubn=(pubn/(coun8+coun9+coun10))*100;
 		pubnote=(pubnote/coun8)*100;
         pubnfor=(pubnfor/coun9)*100;
         pubnwin=(pubnwin/coun10)*100;
-        prin=(prin/cachres.length)*100;
+        prin=(prin/(coun8+coun9+coun10))*100;
         prinote=(prinote/coun8)*100;
         prinfor=(prinfor/coun9)*100;
         prinwin=(prinwin/coun10)*100;
-        nocn=(nocn/cachres.length)*100;
+        nocn=(nocn/(coun8+coun9+coun10))*100;
         nocnote=(nocnote/coun8)*100;
         nocnfor=(nocnfor/coun9)*100;
         nocnwin=(nocnwin/coun10)*100;
-        nosn=(nosn/cachres.length)*100;
+        nosn=(nosn/(coun8+coun9+coun10))*100;
         nosnote=(nosnote/coun8)*100;
         nosnfor=(nosnfor/coun9)*100;
         nosnwin=(nosnwin/coun10)*100;
 		
-		pubo=(pubo/cachres.length)*100;
+		pubo=(pubo/(coun11+coun12+coun13))*100;
         puboote=(puboote/coun11)*100;
         pubofor=(pubofor/coun12)*100;
         pubowin=(pubowin/coun13)*100;
-        prio=(prio/cachres.length)*100;
+        prio=(prio/(coun11+coun12+coun13))*100;
         prioote=(prioote/coun11)*100;
         priofor=(priofor/coun12)*100;
         priowin=(priowin/coun13)*100;
-        noco=(noco/cachres.length)*100;
+        noco=(noco/(coun11+coun12+coun13))*100;
         nocoote=(nocoote/coun11)*100;
         nocofor=(nocofor/coun12)*100;
         nocowin=(nocowin/count13)*100;
-        noso=(noso/cachres.length)*100;
+        noso=(noso/(coun11+coun12+coun13))*100;
         nosoote=(nosoote/coun11)*100;
         nosofor=(nosofor/coun12)*100;
         nosowin=(nosowin/coun13)*100;
