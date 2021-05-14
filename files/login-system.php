@@ -10,15 +10,22 @@ include_once 'connect.php';
 <html>
   <head>
     <title>Log in Page</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-login.css"></link>
   </head>
   <body>
   
   <!--Menu-->
+  <div class="menu">
   <a href='/login-system.php'>Log in</a>
   <a href='/signup-system.php'>Sign up</a>
-  
-   <h1>Please Login</h1>
-   <form action="?" method="post">
+  </div>
+  <div class="container">
+   <form id="login" action="?" method="post">
+   <div class="header">
+   <h3>Please Login</h3>
+   </div>
+    <div class="sep"></div>
+	<div class="inputs">
 	  <label>Username</label>
 	  <input type="text" name="user" value="<?php $username ?>"> <br>
 	  <label>Password</label>
@@ -31,6 +38,8 @@ include_once 'connect.php';
 	<br>
 	<input type="submit" name ="admin" value="Admin">
 	</form>
+	</div>
+   </div>
 	<?php
 
     if (isset($_POST["admin"])){

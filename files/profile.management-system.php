@@ -16,18 +16,26 @@ echo "<br>";
 <html>
   <head>
     <title>Profile Management</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-signup.css"></link>
   </head>
   <body>
   
   <!--Menu-->
+  <div class="menu">
   <a href='/logout-system.php'>Log out</a>
   <a href='/profile.management-system.php'>Profile management</a>
   <a href='/upload-system.php'>Upload</a>
   <a href='/home-system.php'>Home</a>
-  
+  </div>
   <!--Αλλαγή στοιχείων-->
-   <h1>Change Info</h1>
-   <form action="?" method="post">
+  <div class="container">
+   <form id="signup" action="?" method="post">
+   <div class="header">
+   <h3>Change Info</h3>
+   </div>
+   <!--Είσοδος στοιχείων-->
+   <div class="sep"></div>
+	<div class="inputs">
    <label>New Username</label>
    <input type="text" name="user" value="<?php $username ?>"> <br>
    
@@ -42,8 +50,13 @@ echo "<br>";
 	
 	<input type="submit" name ="submit" value="Submit">
 	<br>
-	
-	<h1>Statistics</h1>
+	</form>
+	</div>
+   </div>
+   
+   <div class="stat">
+	<h2>Statistics</h2>
+	<div class="sep2"></div>
 	<?php
 	
 	$iduser=mysqli_query($conn,"SELECT iduserinfo FROM userinfo WHERE username='".$user."'" );
@@ -69,5 +82,7 @@ echo "<br>";
 	
 	<!--Έλεγχος ορθότητας του password-->
 	<?php include 'profile.management-system-errors.php' ?>
+	</div>
+	
 	</body>
 </html>

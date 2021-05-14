@@ -25,6 +25,7 @@ echo "<br>";
    </style>
   </head>
   <body>
+  <a href='/admin-page.php'>Previous Page</a>
   <a href='/logout-system.php'>Log out</a><br>
   
   <div id="mapid"></div>
