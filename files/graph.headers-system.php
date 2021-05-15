@@ -2,29 +2,38 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
-
 ?>
+<div class="menu">
+<?php
+session_start();
+$user = $_SESSION['user'];
+echo "Welcome admin";
+echo "<br>";
+?>
+</div>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Chart Page</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
   </head>
   <body>
+  <div class="menu">
   <a href='/admin-page.php'>Previous Page</a>
   <a href='/logout-system.php'>Log out</a>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <canvas id="chartContainer" width="1200" height="400"></canvas>
   
-  <button  id="TTL">TTL analysis</button>
-  <button  id="Pub">Public percentage</button>
-  <button  id="Pri">Private percentage</button>
-  <button  id="Noc">No cache percentage</button>
-  <button  id="Nos">No store percentage</button>
-  
+  <div class="button">
+  <input type="submit" id="TTL" value="TTL analysis">
+  <input type="submit" id="Pub" value="Public percentage">
+  <input type="submit" id="Pri" value="Private percentage">
+  <input type="submit" id="Noc" value="No cache percentage">
+  <input type="submit" id="Nos" value="No store percentage">
+  </div>
   <script>
   var info=new Array();
   var contres=new Array();
@@ -788,7 +797,7 @@ var pubo=0;
         textcsswin=textcsswin/count5;*/
 		
 		
-				var ctx=document.getElementById('chartContainer');
+		var ctx=document.getElementById('chartContainer');
 		window.chart = new Chart(ctx, {
 			type: 'bar',
 			data: {

@@ -2,20 +2,30 @@
 //αρχική σελίδα΄του διαχειριστή και εμφάνιση πινάκων.
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-
-
 ?>
+<div class="menu">
+<?php
+session_start();
+$user = $_SESSION['user'];
+echo "Welcome admin";
+echo "<br>";
+?>
+</div>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Admin Page</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-admin.css"></link>
   </head>
   <body>
+  <div class="menu">
   <a href='/logout-system.php'>Log out</a>
+  </div>
   <br>
   <br>
-  <form action="?" method="post">
+  
+  <form id="admin" action="?" method="post">
   <input type="submit" name ="grapht" value="Timings charts">
   <br>
   <br>
@@ -24,6 +34,7 @@ include_once 'connect.php';
   <br>
   <input type="submit" name ="amap" value="Map">
   </form>
+  
   <?php
   //κουμπι για τα timings charts
   if (isset($_POST["grapht"])){
@@ -50,6 +61,9 @@ include_once 'connect.php';
   $pro=mysqli_query($conn,"SELECT DISTINCT provider FROM harfiles"); 
   $count2=mysqli_num_rows($pro);
   //δημιουργία πινάκων 
+  ?>
+  <div class="cont1">
+  <?php
   echo "<table border='1'>
 	<tr>
 	<th>Basic statistics</th>
@@ -71,7 +85,10 @@ include_once 'connect.php';
    <td> ".$count2."</td>
    </tr>";
   echo "</table>";
-  
+  ?>
+  </div>
+  <div class="cont2">
+  <?php
   echo "<table border='1'>
 	<tr>
 	<th>Request Method</th>
@@ -93,8 +110,11 @@ include_once 'connect.php';
 		break;
     }  
   }
-  echo "<br>";
-  
+  echo  "</table>";
+  ?>
+  </div>
+  <div class="cont3">
+  <?php
   echo "<table border='1'>
 	<tr>
 	<th>Response Status</th>
@@ -116,8 +136,11 @@ include_once 'connect.php';
 		break;
     }  
   }
-  echo "<br>";
- 
+  echo "</table>";
+  ?>
+  </div>
+  <div class="cont4">
+  <?php
   echo "<table border='1'>
   <tr>
   <th>Content Type</th>
@@ -139,8 +162,8 @@ include_once 'connect.php';
 			break;
 		}  
 	}
-	echo "<br>";
-	
+	echo "</table>";
   ?>
+  </div>
  </body>
 </html>

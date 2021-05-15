@@ -3,30 +3,41 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-
+?>
+<div class="menu">
+<?php
 /*Φόρτωση του username του εκάστοτε χρήστη*/
 session_start();
 $user = $_SESSION['user'];
 echo "Welcome ".$user;
 echo "<br>";
-
 ?>
+</div>
 
 <!DOCTYPE html>
-<html>
+<html class="no-js">
     <head>
       <title>Upload Page</title>
+	  <link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
+	  <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|s)no-js(s|$)/,"$1js$2")})(document,window,0);</script>
     </head>
     <body>
   
       <!--Menu-->
+	  <div class="menu">
       <a href='/logout-system.php'>Log out</a>
       <a href='/profile.management-system.php'>Profile management</a>
       <a href='/upload-system.php'>Upload</a>
       <a href='/home-system.php'>Home</a>
+	  </div>
   
-      <h1>Choose a File to Upload</h1>
-      <input type="file" onchange="readFiles(event)" accept=".har">
+	 <div class="container">
+	 <div class="upload">
+      <h2>Choose a File to Upload</h2>
+	  
+	  <div class="sep"></div>
+      <input type="file" onchange="readFiles(event)" id="f" accept=".har">
+	  <label for="f">Choose File</label>
       <br>
       <br>
       <input id="down" type="button" disabled="true" value="Download" onclick="save(event)">
@@ -35,6 +46,8 @@ echo "<br>";
       <input id="up" type="button" disabled="true" value="Upload" onclick="upload(event)">
 	  <br>
 	  <br>
+	  </div>
+   </div>
 	  <div id="myDiv1"></div>
 	  <div id="myDiv"></div>
       <script>
@@ -181,6 +194,8 @@ echo "<br>";
 	        document.getElementById("down").disabled=false;
 	        document.getElementById("up").disabled=false;
         }
+		
+		
 
       </script>
 

@@ -2,12 +2,15 @@
 // αρχείο για τη δημιουργία του χάρτη του διαχειριστή
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-
+?>
+<div class="menu">
+<?php
 session_start();
 $user = $_SESSION['user'];
-echo "Welcome ".$user;
+echo "Welcome  admin";
 echo "<br>";
 ?>
+</div>
 
 <!DOCTYPE html>
 <html>
@@ -23,11 +26,13 @@ echo "<br>";
    <style>
    #mapid { height: 650px; }
    </style>
+   <link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
   </head>
   <body>
+  <div class="menu">
   <a href='/admin-page.php'>Previous Page</a>
   <a href='/logout-system.php'>Log out</a><br>
-  
+  </div>
   <div id="mapid"></div>
   
   <script>

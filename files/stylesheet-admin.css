@@ -1,0 +1,126 @@
+body {
+    /*background-image: url(http://kreativo.se/backlogin.jpg);*/
+  background: rgb(195,152,208);
+  background: linear-gradient(90deg, rgba(195,152,208,1) 0%, rgba(83,65,189,0.42370451598608194) 35%, rgba(0,39,77,1) 100%);
+  
+  
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    padding-top: 20px;
+}
+
+.menu {
+    width: 406px;
+    max-width: 250px;
+	background: #ab73cc;
+	border-radius: 5px;
+	margin: 10px;
+	text-align: center;
+	padding: 5px;
+}
+
+.menu a{
+	text-decoration: none;
+	font-family: "Helvetica Neue", Helvetica, Arial;
+	padding: 0.2em 0.1em;
+	color: #4a47a3;
+}
+.menu a:hover{
+	color: #ab73cc;
+	background: #4a47a3;
+}
+
+#admin input[type=submit] {
+   background: #bee5d3;
+   border: 1px solid;
+   border-radius: 3px;
+   font: 700 13px Helvetica,Arial;
+   height: 30px;
+   line-height: 28px;
+   padding: 0 20px;
+   text-align: center;
+   margin-right: 10px;
+   box-sizing: border-box;
+   color: #534e52;
+}
+
+#admin [type=submit]:hover {
+	color: #bee5d3;
+	background: #534e52;
+    
+}
+
+#admin {
+    padding: 10px 25px 10px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+    position: static;
+}
+
+.cont1{
+	 padding: 10px 25px 10px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+	margin: 0 auto;
+	position: absolute;
+	top: 24%;
+	left: 18%;
+	transform: translate(-18%, -24%);
+}
+.cont2{
+	 padding: 10px 25px 10px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+	margin: 0 auto;
+	position: absolute;
+	top: 24%;
+	left: 38%;
+	transform: translate(-38%, -24%);
+    
+}
+.cont3{
+	 padding: 10px 25px 10px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+	margin: 0 auto;
+	position: absolute;
+	top: 24%;
+	left: 58%;
+	transform: translate(-58%, -24%);
+    
+}
+.cont4{
+	 padding: 10px 25px 10px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+    position: static;
+}

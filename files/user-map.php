@@ -2,17 +2,21 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-
+?>
+<div class="menu">
+<?php
 session_start();
 $user = $_SESSION['user'];
 echo "Welcome ".$user;
 echo "<br>";
 ?>
+</div>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Map</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
@@ -25,8 +29,9 @@ echo "<br>";
    </style>
   </head>
   <body>
+  <div class="menu">
   <a href='/logout-system.php'>Log out</a><br>
-  
+  </div>
   <div id="mapid"></div>
   
   <script>

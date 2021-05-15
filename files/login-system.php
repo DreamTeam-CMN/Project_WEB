@@ -37,9 +37,9 @@ include_once 'connect.php';
 	<br>
 	<br>
 	<input type="submit" name ="admin" value="Admin">
+	</div>
 	</form>
 	</div>
-   </div>
 	<?php
 
     if (isset($_POST["admin"])){

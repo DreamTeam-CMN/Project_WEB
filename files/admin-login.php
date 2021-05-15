@@ -30,8 +30,8 @@ include_once 'connect.php';
 	  <input type="password" name="pass" value="<?php $pass ?>"> <br>
 	  <input type="submit" name ="loginad" value="Log in">
 	  <?php include 'admin-login-errors.php' ?> 
-    </form>
+    </div>
+	</form>
 	</div>
-   </div>
  </body>
 </html>

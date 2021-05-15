@@ -3,20 +3,21 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-
+?>
+<div class="menu">
+<?php
 session_start();
 $user = $_SESSION['user'];
 echo "Welcome ".$user;
 echo "<br>";
-
-
 ?>
+</div>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Profile Management</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet-signup.css"></link>
+	<link rel="stylesheet" type="text/css" href="stylesheet-signup2.css"></link>
   </head>
   <body>
   
@@ -31,7 +32,7 @@ echo "<br>";
   <div class="container">
    <form id="signup" action="?" method="post">
    <div class="header">
-   <h3>Change Info</h3>
+   <h2>Change Info</h2>
    </div>
    <!--Είσοδος στοιχείων-->
    <div class="sep"></div>
@@ -50,15 +51,15 @@ echo "<br>";
 	
 	<input type="submit" name ="submit" value="Submit">
 	<br>
+	</div>
 	</form>
 	</div>
-   </div>
    
    <div class="stat">
 	<h2>Statistics</h2>
 	<div class="sep2"></div>
+	<div class="info">
 	<?php
-	
 	$iduser=mysqli_query($conn,"SELECT iduserinfo FROM userinfo WHERE username='".$user."'" );
 	$result=mysqli_fetch_array($iduser);
 	$idu=$result['iduserinfo'];//pairnoume to id tou user
@@ -77,9 +78,8 @@ echo "<br>";
 	$count1=mysqli_num_rows($result1);//pairnoume to plhthos twn eggrafwn pou ekane o xrhsths
 	echo ", στα οποία αντιστοιχούν: ".$count1." entries.";
 	echo "<br>";
-	
 	?>
-	
+	</div>
 	<!--Έλεγχος ορθότητας του password-->
 	<?php include 'profile.management-system-errors.php' ?>
 	</div>

@@ -2,27 +2,38 @@
 
 /*Σύνδεση με την σελίδα connect.php*/
 include_once 'connect.php';
-echo "Connected Successfully";
-echo "<br>";
-
 ?>
+<div class="menu">
+<?php
+session_start();
+$user = $_SESSION['user'];
+echo "Welcome admin";
+echo "<br>";
+?>
+</div>
 
 <!DOCTYPE html>
 <html>
   <head>
     <title>Chart Page</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
   </head>
   <body>
+   <div class="menu">
   <a href='/admin-page.php'>Previous Page</a>
   <a href='/logout-system.php'>Log out</a>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js" integrity="sha512-RGbSeD/jDcZBWNsI1VCvdjcDULuSfWTtIva2ek5FtteXeSjLfXac4kqkDRHVGf1TwsXCAqPTF7/EYITD0/CTqw==" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <canvas id="chartContainer" width="1200" height="400"></canvas>
-  <button  id="Basic">Basic</button>
-  <button  id="Cont">Content Type</button>
-  <button  id="Days">Days</button>
-  <button  id="Meth">Request Methods</button>
-  <button  id="Prov">Providers</button>
+  
+  <div class="button">
+  <input type="submit" id="Basic" value="Basic">
+  <input type="submit" id="Cont" value="Content Type">
+  <input type="submit" id="Days" value="Days">
+  <input type="submit" id="Meth" value="Request Methods">
+  <input type="submit" id="Prov" value="Providers">
+  </div>
   
   <script>
     /* Αρχικοποιήσεις πινάκων*/

@@ -40,8 +40,8 @@ include_once 'connect.php';
 	  <!--Έλεγχος ορθότητας του password-->
 	  <?php include 'signup-system-errors.php' ?>
 	 
+	</div>
 	</form>
 	</div>
-   </div>
 	</body>
 </html>	
