@@ -25,6 +25,8 @@ while ($row=mysqli_fetch_array($array)){
 	$mapTable[1]=$row['requestUrl'];
 	$mapTable[2]=$row['identries'];
 	$mapTable[3]=$row['harname'];
+	$mapTable[0]=str_replace("[", "", $mapTable[0]);
+	$mapTable[0]=str_replace("]", "", $mapTable[0]);
 	echo json_encode($mapTable);//κωδικοποίηση για αποστολή στο user-map.php αρχείο
 		
 }

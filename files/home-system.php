@@ -21,11 +21,12 @@ echo "<br>";
   <body>
   
    <!--Menu-->
-   <div class="menu">
-  <a href='/logout-system.php'>Log out</a>
-  <a href='/profile.management-system.php'>Profile Management</a>
+   <div class="menu">  
   <a href='/upload-system.php'>Upload</a>
+  <a href='/profile.management-system.php'>Profile Management</a>
+  <a href='/user-map.php'>Map</a>
   <a href='/home-system.php'>Home</a>
+  <a href='/logout-system.php'>Log out</a>
   </div>
   <div class="container">
   <div class="header">

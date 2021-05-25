@@ -23,10 +23,8 @@ echo "<br>";
   
   <!--Menu-->
   <div class="menu">
-  <a href='/logout-system.php'>Log out</a>
-  <a href='/profile.management-system.php'>Profile management</a>
-  <a href='/upload-system.php'>Upload</a>
-  <a href='/home-system.php'>Home</a>
+  <a href='home-system.php'>Home</a>
+  <a href='/logout-system.php'>Log out</a><br>
   </div>
   <!--Αλλαγή στοιχείων-->
   <div class="container">

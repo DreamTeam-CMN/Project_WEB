@@ -30,6 +30,7 @@ echo "<br>";
   </head>
   <body>
   <div class="menu">
+  <a href='home-system.php'>Home</a>
   <a href='/logout-system.php'>Log out</a><br>
   </div>
   <div id="mapid"></div>
