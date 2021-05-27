@@ -15,11 +15,10 @@ echo "<br>";
 </div>
 
 <!DOCTYPE html>
-<html class="no-js">
+<html>
     <head>
       <title>Upload Page</title>
-	  <link rel="stylesheet" type="text/css" href="stylesheet-home.css"></link>
-	  <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|s)no-js(s|$)/,"$1js$2")})(document,window,0);</script>
+	  <link rel="stylesheet" type="text/css" href="stylesheet-upload.css"></link>
     </head>
     <body>
   
